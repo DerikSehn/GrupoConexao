@@ -4,7 +4,6 @@ import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { ArrowRight, Users, TrendingUp, Shield, Zap } from "lucide-react"
-import WaveTransition from "@/components/WaveTransition"
 import gsap from "gsap"
 
 export function Hero() {
