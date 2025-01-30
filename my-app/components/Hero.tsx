@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
+import { handleScrollToSection as handleClick } from "@/lib/scroll"
 import { Card, CardContent } from "@/components/ui/card"
 import { ArrowRight, Users, TrendingUp, Shield, Zap } from "lucide-react"
 import gsap from "gsap"
@@ -43,10 +44,10 @@ export function Hero() {
           </h1>
           <p className="text-xl mb-6 text-white">Transformamos desafios em soluções inteligentes para o seu negócio</p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button ref={ctaButtonRef} className="bg-secondary hover:bg-secondary/90 text-white">
+            <Button onClick={() => handleClick('#about')} ref={ctaButtonRef} className="bg-secondary hover:bg-secondary/90 text-white">
               Saiba Mais <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
-            <Button variant="outline" className="border-white text-secondary hover:bg-secondary/10 hover:text-white">
+            <Button onClick={() => handleClick('#contact')}  variant="outline" className="border-white text-secondary hover:bg-secondary/10 hover:text-white">
               Fale Conosco
             </Button>
           </div>

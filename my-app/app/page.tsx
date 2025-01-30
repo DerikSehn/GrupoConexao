@@ -11,6 +11,9 @@ import { HomeIcon, Building2, PiggyBank, Heart, CreditCard, Car } from "lucide-r
 import Link from "next/link"
 import { ProductSection } from "@/components/ProductSection"
 import WaveTransition from "@/components/WaveTransition"
+import  Footer from "@/components/Footer"
+import { handleScrollToSection as handleClick } from "@/lib/scroll"
+
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -82,7 +85,7 @@ export default function Home() {
       <WaveTransition />
 
       {/* Sobre Nós */}
-      <section id="sobre" className="py-12 px-4 bg-primary/5">
+      <section id="about" className="py-12 px-4 bg-primary/5">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-6 text-center text-primary">Sobre Nós</h2>
           <div className="grid md:grid-cols-2 gap-8">
@@ -129,7 +132,7 @@ export default function Home() {
       </section>
 
       {/* Nossos Produtos */}
-      <section id="produtos" className="py-12 px-4 bg-white">
+      <section id="products" className="py-12 px-4 bg-white">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-8 text-center text-primary">Nossos Produtos</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -244,7 +247,7 @@ export default function Home() {
       />
 
       {/* Benefícios */}
-      <section id="beneficios" className="py-12 px-4 bg-primary/5">
+      <section id="benefits" className="py-12 px-4 bg-primary/5">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-8 text-center text-primary">Benefícios</h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -265,16 +268,20 @@ export default function Home() {
         </div>
       </section>
 
+      <Footer/>
+
       {/* CTA */}
-      <section className="py-12 px-4 text-center bg-primary">
+      <section id="#cta" className="py-12 px-4 text-center bg-primary">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-4 text-white">Pronto para Impulsionar Seu Negócio?</h2>
           <p className="text-xl mb-8 text-white/90">
             Entre em contato conosco e descubra como podemos ajudar você a alcançar resultados extraordinários.
           </p>
-          <Button className="bg-secondary hover:bg-secondary/90 text-white text-lg px-8 py-3">Fale Conosco</Button>
+          <Button onClick={() => handleClick('#about')} className="bg-secondary hover:bg-secondary/90 text-white text-lg px-8 py-3">Fale Conosco</Button>
         </div>
       </section>
     </div>
+
+
   )
 }
