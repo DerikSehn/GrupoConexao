@@ -6,13 +6,14 @@ import { Header } from "@/components/Header"
 import { Hero } from "@/components/Hero"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { CheckCircle, Shield } from "lucide-react"
+import { CheckCircle, Instagram, Shield } from "lucide-react"
 import { HomeIcon, Building2, PiggyBank, Heart, CreditCard, Car } from "lucide-react"
 import Link from "next/link"
 import { ProductSection } from "@/components/ProductSection"
 import WaveTransition from "@/components/WaveTransition"
 import  Footer from "@/components/Footer"
 import { handleScrollToSection as handleClick } from "@/lib/scroll"
+import WhatsappButton from "@/components/button/WhatsappButton";
 
 
 gsap.registerPlugin(ScrollTrigger)
@@ -78,6 +79,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
+      <WhatsappButton link="https://api.whatsapp.com/send?phone=5551999300707&text=Ol%C3%A1" className="fixed bottom-2 right-2" />
       <Header />
 
       <Hero />
@@ -271,13 +273,22 @@ export default function Home() {
       <Footer/>
 
       {/* CTA */}
-      <section id="#cta" className="py-12 px-4 text-center bg-primary">
-        <div className="container mx-auto">
+      <section id="cta" className="py-12 px-4 text-center bg-secondary relative">
+        <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: 'url(/images/cta-bg.jpg)' }}></div>
+        <div className="container mx-auto relative z-10">
           <h2 className="text-3xl font-bold mb-4 text-white">Pronto para Impulsionar Seu Negócio?</h2>
           <p className="text-xl mb-8 text-white/90">
             Entre em contato conosco e descubra como podemos ajudar você a alcançar resultados extraordinários.
           </p>
-          <Button onClick={() => handleClick('#about')} className="bg-secondary hover:bg-secondary/90 text-white text-lg px-8 py-3">Fale Conosco</Button>
+          <Button onClick={() => handleClick('#about')} className="bg-primary hover:bg-primary/90 text-white text-lg px-8 py-3 mb-4">Fale Conosco</Button>
+          <div className="flex flex-col items-center gap-4">
+            <a href="https://www.instagram.com/grupoconexao_br" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 text-lg flex gap-4">
+              <Instagram className=""/>
+              <p>
+              Siga-nos no Instagram
+              </p>
+            </a>
+          </div>
         </div>
       </section>
     </div>

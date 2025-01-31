@@ -1,4 +1,3 @@
-"use client";
 import { useEffect } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -35,16 +34,16 @@ export function ProductSection({ id, title, description, features }: ProductSect
   }, [id])
 
   return (
-    <section id={id} className="py-12 px-4 bg-primary/5 even:bg-white">
+    <section id={id} className="py-12 px-4 bg-primary/5 even:bg-gray-900 even:text-white lg:min-h-[600px] content-center">
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold mb-6 text-center text-primary">{title}</h2>
-        <p className="text-lg mb-8 text-center max-w-3xl mx-auto text-gray-700">{description}</p>
+        <h2 className="text-3xl font-bold mb-6 text-center text-primary even:text-white">{title}</h2>
+        <p className="text-lg mb-8 text-center max-w-3xl mx-auto text-gray-700 even:text-gray-500">{description}</p>
         <div className="grid md:grid-cols-2 gap-6">
           {features.map((feature, index) => (
-            <Card key={index} className="bg-white border-primary hover:border-secondary transition-colors product-card">
-              <CardContent className="p-6 flex items-start">
-                <CheckCircle className="h-6 w-6 text-secondary mr-4 flex-shrink-0 mt-1" />
-                <p className="text-gray-700">{feature}</p>
+            <Card key={index} className=" bg-primary/5  border-primary/5 hover:border-secondary transition-colors product-card">
+              <CardContent className="p-6 flex items-start text-gray-400">
+                <CheckCircle className="h-6 w-6  mr-4 flex-shrink-0 mt-1" />
+                <p>{feature}</p>
               </CardContent>
             </Card>
           ))}

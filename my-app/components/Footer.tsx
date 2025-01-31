@@ -26,7 +26,7 @@ const teamMembers = [
     name: 'Leandro Duarte',
     image: '/images/leandro.jpeg',
     email: 'leandro.duarte@conexao-suc.com.br',
-    phone: '(51) 984840902',
+    phone: '(51) 98484-0902',
     description: 'Diretor comercial e estrategista, com vasta experiência em técnicas de vendas inovadoras e negociação de parcerias sólidas',
   },
 ];

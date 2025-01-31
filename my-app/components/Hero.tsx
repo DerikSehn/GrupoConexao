@@ -35,7 +35,7 @@ export function Hero() {
   }, [])
 
   return (
-    <section ref={heroRef} className="pt-36 pb-24 px-4 bg-primary md:py-32 lg:py-52">
+    <section ref={heroRef} className="pt-52 pb-24 px-4 bg-primary  ">
       <div className="container mx-auto grid md:grid-cols-2 gap-8 items-center">
         <div className="hero-content text-left">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
