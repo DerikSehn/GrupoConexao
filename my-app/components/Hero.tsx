@@ -6,9 +6,11 @@ import { handleScrollToSection as handleClick } from "@/lib/scroll"
 import { Card, CardContent } from "@/components/ui/card"
 import { ArrowRight, Users, TrendingUp, Shield, Zap } from "lucide-react"
 import gsap from "gsap"
+import WaveTransition from "@/components/WaveTransition"
 
 export function Hero() {
   const heroRef = useRef(null)
+  const mainRef = useRef(null)
   const ctaButtonRef = useRef(null)
 
   useEffect(() => {
@@ -29,12 +31,26 @@ export function Hero() {
         yoyo: true,
         duration: 0.8,
       })
-    }, heroRef)
+
+      /* parallax do hero em relação ao conteudo principal */
+      gsap.to(mainRef.current, {
+        scrollTrigger: {
+          trigger: heroRef.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: 1,
+        },
+        y: 150,
+        rotate: -2, 
+        scale: 1.02,
+      })
+    }, mainRef)
 
     return () => ctx.revert()
   }, [])
 
-  return (
+  return (<div ref={mainRef} >
+
     <section ref={heroRef} className="pt-52 pb-24 px-4 bg-primary  ">
       <div className="container mx-auto grid md:grid-cols-2 gap-8 items-center">
         <div className="hero-content text-left">
@@ -73,6 +89,8 @@ export function Hero() {
         </div>
       </div>
     </section>
+      <WaveTransition />
+  </div>
   )
 }
 

@@ -9,11 +9,12 @@ interface ProductSectionProps {
   title: string
   description: string
   features: string[]
+  children?: React.ReactNode
 }
 
 gsap.registerPlugin(ScrollTrigger)
 
-export function ProductSection({ id, title, description, features }: ProductSectionProps) {
+export function ProductSection({ id, title, description, features, children }: ProductSectionProps) {
   useEffect(() => {
     gsap.fromTo(`#${id} .product-card`, 
       { opacity: 0, y: 50 }, 
@@ -48,6 +49,7 @@ export function ProductSection({ id, title, description, features }: ProductSect
             </Card>
           ))}
         </div>
+        {children}
       </div>
     </section>
   )

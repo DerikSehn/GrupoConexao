@@ -6,11 +6,10 @@ import { Header } from "@/components/Header"
 import { Hero } from "@/components/Hero"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { CheckCircle, Instagram, Shield } from "lucide-react"
+import { ArrowRight, CheckCircle, Instagram, Shield } from "lucide-react"
 import { HomeIcon, Building2, PiggyBank, Heart, CreditCard, Car } from "lucide-react"
 import Link from "next/link"
 import { ProductSection } from "@/components/ProductSection"
-import WaveTransition from "@/components/WaveTransition"
 import  Footer from "@/components/Footer"
 import { handleScrollToSection as handleClick } from "@/lib/scroll"
 import WhatsappButton from "@/components/button/WhatsappButton";
@@ -78,13 +77,12 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       <WhatsappButton link="https://api.whatsapp.com/send?phone=5551999300707&text=Ol%C3%A1" className="fixed bottom-2 right-2" />
       <Header />
 
       <Hero />
 
-      <WaveTransition />
 
       {/* Sobre Nós */}
       <section id="about" className="py-12 px-4 bg-primary/5">
@@ -198,7 +196,16 @@ export default function Home() {
           "Possibilidade de lance para contemplação antecipada",
           "Atendimento consultivo para escolha do melhor plano",
         ]}
-      />
+      >
+        <div className="flex justify-center p-6">
+        {/* Button/Link to /consorcios, wich shows a list of banks and when the user clicks in it, gets a whatsapp api link in a new tab*/}
+        <Link href={`/consorcios`} className="text-white hover:text-gray-300 text-lg group ">
+          <Button className="bg-primary hover:bg-primary/90 text-white text-lg p-8 flex items-center ">
+            Saiba mais <ArrowRight className="ml-2 scale-[2] group-hover:translate-x-2 duration-400 transition-transform" />
+          </Button>
+        </Link> 
+        </div> 
+        </ProductSection>
 
       <ProductSection
         id="plano-beneficios"
