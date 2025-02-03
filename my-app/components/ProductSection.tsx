@@ -51,7 +51,7 @@ export function ProductSection({ id, title, description, features, children, ind
       <div className={`container mx-auto relative rounded-xl lg:min-h-[600px] content-center ${ isEven ? "bg-black" : "bg-transparent"}`}>
       <h2 className="text-6xl font-thin  mb-6 text-center text-primary even:text-white">{title}</h2>
         <p className={`text-lg mb-8 text-center max-w-3xl mx-auto ${isEven ? 'text-gray-400' : 'text-gray-800'}`}>{description}</p>
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 max-w-prose mx-auto">
           {features.map((feature, id) => (
             <Card key={id} className=" bg-primary/5  border-primary/5 hover:border-secondary transition-colors product-card">
               <CardContent className={`p-6 flex items-start ${isEven ? 'text-gray-400' : 'text-gray-800'} `}>

@@ -3,6 +3,7 @@ import WhatsappButton from "@/components/button/WhatsappButton";
 import Footer from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
+import ProductCard from "@/components/ProductCard";
 import { ProductSection } from "@/components/ProductSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -161,22 +162,11 @@ export default function Home() {
           {/* <h2 className="text-3xl font-bold mb-8 text-center text-primary">Nossos Produtos</h2> */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
           {products.map((product, index) => (
-            <div key={product.name} className="bg-white relative hover:border-secondary transition-colors border-primary min-h-72">
-             <Link href={product.href} className="">
-              <Image 
-                src={product.image} 
-                alt={product.name} 
-                fill 
-                placeholder="blur"
-                blurDataURL="/logo.png"
-                className={`object-cover z-0 ${index % 2 === 0 ? 'filter grayscale brightness-50' : 'filter brightness-50'}`} 
-               />
-              <span className={cn(`absolute inset-0 z-10 flex  opacity-0 ${index % 2 === 0 ? "bg-black/50" : "bg-primary/70"} opacity-50 transition-opacity`)}/>
-              <CardContent className="p-6 flex flex-col   relative z-20 h-full ">
-                <h3 className={`text-3xl font-semibold   ${index % 2 !== 0 ? 'text-white' : 'text-primary-800'}`}>{product.name}</h3>
-              </CardContent>
-              </Link>
-            </div>
+            <ProductCard 
+              key={product.name} 
+              product={product} 
+              index={index}
+            />
           ))}         
            </div>
         </div>
