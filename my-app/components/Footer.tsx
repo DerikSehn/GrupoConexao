@@ -75,6 +75,7 @@ const ContactSection: React.FC = () => {
           Nossa equipe está pronta para ajudar. Entre em contato com um de nossos especialistas.
         </p>
         <Slider  {...settings}>
+          
           {teamMembers.map((member, index) => (
             <div key={index} className="p-4">
               <div className="bg-white p-6 rounded-lg shadow-lg flex  flex-col items-center text-center ">
