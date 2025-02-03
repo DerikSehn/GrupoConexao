@@ -35,7 +35,7 @@ const products = [
   { name: "Plano de Benefícios (saúde)", href: "https://api.whatsapp.com/send?phone=5551981728039&text=Ol%C3%A1", image: '/images/products/plano-beneficios.jpg' },
   { name: "Plano de Saúde", href: "https://api.whatsapp.com/send?phone=5551981728039&text=Ol%C3%A1", image: '/images/products/plano-saude.jpg' },
   { name: "Assessoria Jurídica Empresarial", href: "https://api.whatsapp.com/send?phone=5551981728039&text=Ol%C3%A1", image: '/images/products/assessoria-juridica-empresarial.jpg' },
-  { name: "Veículos", href: "/product/veiculos", image: 'https://api.whatsapp.com/send?phone=5551981728039&text=Ol%C3%A1' },
+  { name: "Veículos", href: "https://api.whatsapp.com/send?phone=5551981728039&text=Ol%C3%A1", image: '/images/products/veiculos.webp' },
 ];
 gsap.registerPlugin(ScrollTrigger)
 
