@@ -33,7 +33,7 @@ export function Hero() {
       })
 
       /* parallax do hero em relação ao conteudo principal */
-      gsap.to(mainRef.current, {
+     /*  gsap.to(mainRef.current, {
         scrollTrigger: {
           trigger: heroRef.current,
           start: "top top",
@@ -43,7 +43,7 @@ export function Hero() {
         y: 150,
         rotate: -.05, 
         scale: 1.01,
-      })
+      }) */
     }, mainRef)
 
     return () => ctx.revert()
@@ -51,7 +51,7 @@ export function Hero() {
 
   return (<div ref={mainRef} >
 
-    <section ref={heroRef} className="pt-52 pb-24 px-4 bg-primary  ">
+    <section ref={heroRef} className="pt-52 pb-24 px-4 bg-primary bg-gradient-to-t from-primary to-primary-400  ">
       <div className="container mx-auto grid md:grid-cols-2 gap-8 items-center">
         <div className="hero-content text-left">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">

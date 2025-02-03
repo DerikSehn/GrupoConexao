@@ -107,17 +107,19 @@ export default function Home() {
 
 
       {/* Sobre Nós */}
-      <section id="about" className="py-12 px-4 bg-primary/5">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-6 text-center text-primary">Sobre Nós</h2>
+      <section id="about" className="relative mb-10">
+        <span className=" absolute inset-x-1/2 inset-y-0 right-0 z-0 bg-black py-24 px-8"/>
+        <div className="container mx-auto relative bg-black bg-gradient-to-l from-black to-black-400 py-24 px-8 rounded-l-xl">
+      
           <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <p className="text-lg mb-4 text-gray-700">
+              <h2 className="text-6xl font-thin  mb-6 text-left text-primary">Quem somos</h2>
+              <p className="text-lg mb-4 text-white">
                 No Grupo Conexão, somos movidos pelo propósito de transformar desafios em soluções inteligentes.
                 Credenciados diretamente às principais plataformas digitais e Fintechs, oferecemos muito mais que
                 serviços: entregamos resultados com excelência, inovação e comprometimento.
               </p>
-              <p className="text-lg text-gray-700">
+              <p className="text-lg text-gray-300">
                 Nossa equipe é formada por profissionais altamente qualificados, prontos para atender às suas
                 necessidades com competência, assertividade e consistência, pilares que sustentam nossa atuação e
                 garantem um impacto real e duradouro.
@@ -182,6 +184,7 @@ export default function Home() {
 
       {/* Seções de Produtos */}
       <ProductSection
+        index={0}
         id="credito-imobiliario"
         title="Crédito Imobiliário"
         description="Facilitamos o acesso ao crédito imobiliário, conectando você às melhores oportunidades para realizar o sonho da casa própria."
@@ -194,6 +197,7 @@ export default function Home() {
       />
 
       <ProductSection
+        index={1}
         id="construcao-civil"
         title="Construção Civil"
         description="Oferecemos soluções completas para o setor de construção civil, conectando empresas a clientes qualificados e prontos para investir."
@@ -206,6 +210,7 @@ export default function Home() {
       />
 
       <ProductSection
+        index={2}
         id="consorcios"
         title="Consórcios"
         description="Nossos consórcios oferecem uma forma inteligente e planejada de adquirir bens e serviços, com condições especiais e flexibilidade."
@@ -227,6 +232,7 @@ export default function Home() {
         </ProductSection>
 
       <ProductSection
+        index={3}
         id="plano-beneficios"
         title="Plano de Benefícios (Saúde)"
         description="Cuidamos da saúde e bem-estar dos seus colaboradores com planos de benefícios abrangentes e personalizados."
@@ -239,6 +245,7 @@ export default function Home() {
       />
 
       <ProductSection
+        index={4}
         id="seguros"
         title="Seguros"
         description="Proteja o que é importante para você com nossas soluções em seguros, oferecendo tranquilidade e segurança para sua vida e seus bens."
@@ -251,6 +258,7 @@ export default function Home() {
       />
 
       <ProductSection
+        index={5}
         id="credito-consignado"
         title="Crédito Consignado Público e Privado"
         description="Oferecemos as melhores condições de crédito consignado, com taxas atrativas e processo simplificado para servidores públicos e trabalhadores do setor privado."
@@ -263,6 +271,7 @@ export default function Home() {
       />
 
       <ProductSection
+        index={6}
         id="veiculos"
         title="Veículos"
         description="Facilitamos a aquisição do seu veículo novo ou seminovo, conectando você às melhores oportunidades do mercado automotivo."
@@ -306,7 +315,7 @@ export default function Home() {
           <p className="text-xl mb-8 text-white/90">
             Entre em contato conosco e descubra como podemos ajudar você a alcançar resultados extraordinários.
           </p>
-          <Button onClick={() => handleClick('#about')} className="bg-primary hover:bg-primary/90 text-white text-lg px-8 py-3 mb-4">Fale Conosco</Button>
+          <Button onClick={() => handleClick('https://api.whatsapp.com/send?phone=5551999300707&text=Ol%C3%A1')} className="bg-primary hover:bg-primary/90 text-white text-lg px-8 py-3 mb-4">Fale Conosco</Button>
           <div className="flex flex-col items-center gap-4">
             <a href="https://www.instagram.com/grupoconexao_br" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 text-lg flex gap-4">
               <Instagram className=""/>

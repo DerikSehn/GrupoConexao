@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Menu } from "lucide-react"
@@ -15,10 +16,33 @@ const products = [
 ]
 
 export function Header() {
+  const [isVisible, setIsVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
+
+  const handleScroll = () => {
+    if (typeof window !== 'undefined') {
+      if (window.scrollY < lastScrollY || window.scrollY === 0) {
+        setIsVisible(true)
+      } else {
+        setIsVisible(false)
+      }
+      setLastScrollY(window.scrollY)
+    }
+  }
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', handleScroll)
+      return () => {
+        window.removeEventListener('scroll', handleScroll)
+      }
+    }
+  }, [lastScrollY])
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black text-white">
+    <header className={`fixed top-0 left-0 right-0 z-50 bg-black text-white transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex items-center bg-black py-3 -mb-6 px-4 -mx-4 rounded-b-lg">
           <Image
             src="/logo.png"
             alt="Grupo Conexão"
@@ -54,9 +78,7 @@ export function Header() {
             </nav>
           </SheetContent>
         </Sheet>
-        
       </div>
     </header>
   )
 }
-
