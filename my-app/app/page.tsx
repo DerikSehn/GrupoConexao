@@ -32,10 +32,10 @@ const products = [
   { name: "Construção Civil", href: "/product/construcao-civil", image: '/images/products/construcao-civil.jpg' },
   { name: "Consórcios", href: "/product/consorcios", image: '/images/products/consorcios.jpg' },
   { name: "Seguros", href: "/product/seguros", image: '/images/products/seguros.jpg' },
-  { name: "Plano de Benefícios (saúde)", href: "/product/plano-beneficios", image: '/images/products/plano-beneficios.jpg' },
-  { name: "Plano de Saúde", href: "/product/plano-saude", image: '/images/products/plano-saude.jpg' },
-  { name: "Assessoria Jurídica Empresarial", href: "/product/assessoria-juridica-empresarial", image: '/images/products/assessoria-juridica-empresarial.jpg' },
-  { name: "Veículos", href: "/product/veiculos", image: '/images/products/veiculos.webp' },
+  { name: "Plano de Benefícios (saúde)", href: "https://api.whatsapp.com/send?phone=5551981728039&text=Ol%C3%A1", image: '/images/products/plano-beneficios.jpg' },
+  { name: "Plano de Saúde", href: "https://api.whatsapp.com/send?phone=5551981728039&text=Ol%C3%A1", image: '/images/products/plano-saude.jpg' },
+  { name: "Assessoria Jurídica Empresarial", href: "https://api.whatsapp.com/send?phone=5551981728039&text=Ol%C3%A1", image: '/images/products/assessoria-juridica-empresarial.jpg' },
+  { name: "Veículos", href: "/product/veiculos", image: 'https://api.whatsapp.com/send?phone=5551981728039&text=Ol%C3%A1' },
 ];
 gsap.registerPlugin(ScrollTrigger)
 
