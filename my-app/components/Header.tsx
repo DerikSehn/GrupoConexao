@@ -16,11 +16,11 @@ const products = [
 
 export function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-secondary text-white">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black text-white">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/GrupoConexaoLogo-N9HTAXl5grkTCsN7AgFJg6mpuNG6ug.jpeg"
+            src="/logo.png"
             alt="Grupo Conexão"
             width={180}
             height={60}

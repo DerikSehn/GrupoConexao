@@ -41,8 +41,8 @@ export function Hero() {
           scrub: 1,
         },
         y: 150,
-        rotate: -2, 
-        scale: 1.02,
+        rotate: -.05, 
+        scale: 1.01,
       })
     }, mainRef)
 
@@ -55,15 +55,15 @@ export function Hero() {
       <div className="container mx-auto grid md:grid-cols-2 gap-8 items-center">
         <div className="hero-content text-left">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-            Conectando <span className="text-secondary">Oportunidades</span>, Gerando{" "}
-            <span className="text-secondary">Resultados</span>
+            Conectando <span className="text-black">Oportunidades</span>, Gerando{" "}
+            <span className="text-black">Resultados</span>
           </h1>
-          <p className="text-xl mb-6 text-white">Transformamos desafios em soluções inteligentes para o seu negócio</p>
+          <p className="text-xl mb-6 text-white">Encurtamos o processo de captação dos seus clientes, garantimos o lead qualificado</p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button onClick={() => handleClick('#about')} ref={ctaButtonRef} className="bg-secondary hover:bg-secondary/90 text-white">
+            <Button onClick={() => handleClick('#about')} ref={ctaButtonRef} className="bg-black hover:bg-black/90 text-white">
               Saiba Mais <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
-            <Button onClick={() => handleClick('#contact')}  variant="outline" className="border-white text-secondary hover:bg-secondary/10 hover:text-white">
+            <Button onClick={() => handleClick('#contact')}  variant="outline" className="border-white text-black hover:bg-black/10 hover:text-white">
               Fale Conosco
             </Button>
           </div>
@@ -80,7 +80,7 @@ export function Hero() {
               className="hero-card bg-white/10 border-white/20 transition-all duration-300 hover:scale-105"
             >
               <CardContent className="p-6 flex flex-col items-center text-center text-white">
-                <card.icon className="h-12 w-12 text-secondary mb-2" />
+                <card.icon className="h-12 w-12 text-black mb-2" />
                 <h3 className="text-lg font-semibold">{card.title}</h3>
                 <p className="text-sm ">{card.description}</p>
               </CardContent>

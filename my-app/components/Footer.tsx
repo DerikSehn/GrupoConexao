@@ -12,7 +12,7 @@ const teamMembers = [
     name: 'Sandro Marques',
     image: '/images/sandro.jpeg',
     email: 'sandro.marques@conexao-suc.com.br',
-    phone: '(51) 8172-7999',
+    phone: '(51) 98172 8039',
     description: 'Diretor Executivo com vasta experiência em liderança e gestão de equipes.',
   },
   {
@@ -28,6 +28,13 @@ const teamMembers = [
     email: 'leandro.duarte@conexao-suc.com.br',
     phone: '(51) 98484-0902',
     description: 'Diretor comercial e estrategista, com vasta experiência em técnicas de vendas inovadoras e negociação de parcerias sólidas',
+  },
+  {
+    name: 'Diego Cividini',
+    image: '/images/diego.jpeg',
+    email: 'diego.cividini@gmail.com',
+    phone: '(51) 8275-5185',
+    description: 'Estrategista de tráfego pago, empreendedor e consultor de negócios, com mais de 15 anos de experiência em estratégia, planejamento e gestão.',
   },
 ];
 
@@ -84,12 +91,12 @@ const ContactSection: React.FC = () => {
                   <h3 className="text-2xl font-semibold text-gray-800 mb-2">{member.name}</h3>
                   <p className="text-lg text-gray-600 mb-4">{member.description}</p>
                   <div className="flex items-center justify-center gap-2 text-gray-700 mb-2">
-                    <Mail className="w-5 h-5 text-secondary" />
-                    <a href={`mailto:${member.email}`} className="hover:text-secondary">{member.email}</a>
+                    <Mail className="w-5 h-5 text-black" />
+                    <a href={`mailto:${member.email}`} className="hover:text-black">{member.email}</a>
                   </div>
                   <div className="flex items-center justify-center gap-2 text-gray-700">
-                    <Phone className="w-5 h-5 text-secondary" />
-                    <a href={`tel:${member.phone}`} className="hover:text-secondary">{member.phone}</a>
+                    <Phone className="w-5 h-5 text-black" />
+                    <a href={`tel:${member.phone}`} className="hover:text-black">{member.phone}</a>
                   </div>
                 </div>
               </div>

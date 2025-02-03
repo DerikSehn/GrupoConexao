@@ -13,8 +13,31 @@ import { ProductSection } from "@/components/ProductSection"
 import  Footer from "@/components/Footer"
 import { handleScrollToSection as handleClick } from "@/lib/scroll"
 import WhatsappButton from "@/components/button/WhatsappButton";
+import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 
+const products = [
+  { name: "Abertura Conta Corrente Digital – PJ e PF", href: "/product/abertura-conta-corrente", image: '/images/products/abertura-conta-corrente.jpg' },
+  { name: "Cartão de Crédito Corporativo", href: "/product/cartao-credito-corporativo", image: '/images/products/cartao-credito-corporativo.jpg' },
+  { name: "Reestruturação Empresarial", href: "/product/reestruturacao-empresarial", image: '/images/products/reestruturacao-empresarial.jpg' },
+  { name: "Capital de Giro", href: "/product/capital-giro", image: '/images/products/capital-giro.jpg' },
+  { name: "Recebíveis", href: "/product/recebiveis", image: '/images/products/recebiveis.jpg' },
+  { name: "Empréstimo com Garantia Imóvel", href: "/product/emprestimo-garantia-imovel", image: '/images/products/emprestimo-garantia-imovel.jpg' },
+  { name: "Crédito com Garantia Imóvel", href: "/product/credito-garantia-imovel", image: '/images/products/credito-garantia-imovel.jpg' },
+  { name: "Crédito Imobiliário", href: "/product/credito-imobiliario", image: '/images/products/credito-imobiliario.jpg' },
+  { name: "CDC Lojista", href: "/product/cdc-lojista", image: '/images/products/cdc-lojista.jpg' },
+  { name: "Consignado Público e Privado", href: "/product/consignado-publico-privado", image: '/images/products/consignado-publico-privado.jpg' },
+  { name: "Convênios Governos", href: "/product/convenios-governos", image: '/images/products/convenios-governos.jpg' },
+  { name: "Convênios Prefeituras", href: "/product/convenios-prefeituras", image: '/images/products/convenios-prefeituras.webp' },
+  { name: "Construção Civil", href: "/product/construcao-civil", image: '/images/products/construcao-civil.jpg' },
+  { name: "Consórcios", href: "/product/consorcios", image: '/images/products/consorcios.jpg' },
+  { name: "Seguros", href: "/product/seguros", image: '/images/products/seguros.jpg' },
+  { name: "Plano de Benefícios (saúde)", href: "/product/plano-beneficios", image: '/images/products/plano-beneficios.jpg' },
+  { name: "Plano de Saúde", href: "/product/plano-saude", image: '/images/products/plano-saude.jpg' },
+  { name: "Assessoria Jurídica Empresarial", href: "/product/assessoria-juridica-empresarial", image: '/images/products/assessoria-juridica-empresarial.jpg' },
+  { name: "Veículos", href: "/product/veiculos", image: '/images/products/veiculos.webp' },
+];
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Home() {
@@ -104,25 +127,25 @@ export default function Home() {
             <div className="grid grid-cols-2 gap-4">
               <Card className="bg-white border-primary card">
                 <CardContent className="p-6 flex flex-col items-center text-center">
-                  <h3 className="text-2xl font-bold text-secondary mb-2">5+</h3>
+                  <h3 className="text-2xl font-bold text-black mb-2">5+</h3>
                   <p className="text-sm text-gray-600">Anos de Experiência</p>
                 </CardContent>
               </Card>
               <Card className="bg-white border-primary card">
                 <CardContent className="p-6 flex flex-col items-center text-center">
-                  <h3 className="text-2xl font-bold text-secondary mb-2">1000+</h3>
+                  <h3 className="text-2xl font-bold text-black mb-2">1000+</h3>
                   <p className="text-sm text-gray-600">Clientes Satisfeitos</p>
                 </CardContent>
               </Card>
               <Card className="bg-white border-primary card">
                 <CardContent className="p-6 flex flex-col items-center text-center">
-                  <h3 className="text-2xl font-bold text-secondary mb-2">50+</h3>
+                  <h3 className="text-2xl font-bold text-black mb-2">50+</h3>
                   <p className="text-sm text-gray-600">Parceiros de Negócios</p>
                 </CardContent>
               </Card>
               <Card className="bg-white border-primary card">
                 <CardContent className="p-6 flex flex-col items-center text-center">
-                  <h3 className="text-2xl font-bold text-secondary mb-2">24/7</h3>
+                  <h3 className="text-2xl font-bold text-black mb-2">24/7</h3>
                   <p className="text-sm text-gray-600">Suporte Dedicado</p>
                 </CardContent>
               </Card>
@@ -134,30 +157,27 @@ export default function Home() {
       {/* Nossos Produtos */}
       <section id="products" className="py-12 px-4 bg-white">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center text-primary">Nossos Produtos</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { name: "Crédito Imobiliário", icon: HomeIcon, href: "#credito-imobiliario" },
-              { name: "Construção Civil", icon: Building2, href: "#construcao-civil" },
-              { name: "Consórcios", icon: PiggyBank, href: "#consorcios" },
-              { name: "Plano de Benefícios", icon: Heart, href: "#plano-beneficios" },
-              { name: "Seguros", icon: Shield, href: "#seguros" },
-              { name: "Crédito Consignado", icon: CreditCard, href: "#credito-consignado" },
-              { name: "Veículos", icon: Car, href: "#veiculos" },
-            ].map((product) => (
-              <Card key={product.name} className="bg-white border-primary hover:border-secondary transition-colors card">
-                <CardContent className="p-6 flex flex-col items-center text-center">
-                  <product.icon className="h-12 w-12 text-primary mb-4" />
-                  <h3 className="text-xl font-semibold mb-2 text-gray-800">{product.name}</h3>
-                  <Button variant="link" asChild>
-                    <Link href={product.href} className="text-secondary hover:text-secondary/80">
-                      Saiba mais
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          {/* <h2 className="text-3xl font-bold mb-8 text-center text-primary">Nossos Produtos</h2> */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+          {products.map((product, index) => (
+            <div key={product.name} className="bg-white relative hover:border-secondary transition-colors border-primary min-h-72">
+             <Link href={product.href} className="">
+              <Image 
+                src={product.image} 
+                alt={product.name} 
+                fill 
+                placeholder="blur"
+                blurDataURL="/logo.png"
+                className={`object-cover z-0 ${index % 2 === 0 ? 'filter grayscale brightness-50' : 'filter brightness-50'}`} 
+               />
+              <span className={cn(`absolute inset-0 z-10 flex  opacity-0 ${index % 2 === 0 ? "bg-black/50" : "bg-primary/70"} opacity-50 transition-opacity`)}/>
+              <CardContent className="p-6 flex flex-col   relative z-20 h-full ">
+                <h3 className={`text-3xl font-semibold   ${index % 2 !== 0 ? 'text-white' : 'text-primary-800'}`}>{product.name}</h3>
+              </CardContent>
+              </Link>
+            </div>
+          ))}         
+           </div>
         </div>
       </section>
 
@@ -269,7 +289,7 @@ export default function Home() {
               "Tecnologia de ponta para matching de clientes",
             ].map((benefit) => (
               <div key={benefit} className="flex items-start benefit-item">
-                <CheckCircle className="h-6 w-6 text-secondary mr-2 mt-1 flex-shrink-0" />
+                <CheckCircle className="h-6 w-6 text-black mr-2 mt-1 flex-shrink-0" />
                 <p className="text-gray-700">{benefit}</p>
               </div>
             ))}
@@ -280,7 +300,7 @@ export default function Home() {
       <Footer/>
 
       {/* CTA */}
-      <section id="cta" className="py-12 px-4 text-center bg-secondary relative">
+      <section id="cta" className="py-12 px-4 text-center bg-black relative">
         <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: 'url(/images/cta-bg.jpg)' }}></div>
         <div className="container mx-auto relative z-10">
           <h2 className="text-3xl font-bold mb-4 text-white">Pronto para Impulsionar Seu Negócio?</h2>
