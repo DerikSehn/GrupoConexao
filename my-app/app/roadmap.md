@@ -1,8 +1,8 @@
 # Roadmap de Implementação
 
 ## Fase 1: Estruturação Inicial
-- [ ] Adicionar seções de produtos na landing page.
-- [ ] Criar componentes para exibir produtos/serviços.
+- [x] Adicionar seções de produtos na landing page.
+- [x] Criar componentes para exibir produtos/serviços.
 
 ## Fase 2: Páginas Dinâmicas
 - [ ] Configurar rotas dinâmicas para páginas de produtos.
