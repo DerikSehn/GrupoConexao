@@ -1,11 +1,11 @@
-import React from 'react';
-import { Header } from '@/components/Header';
 import Footer from '@/components/Footer';
+import { Header } from '@/components/Header';
 import { Button } from '@/components/ui/button';
-import { Car, Shield, TrendingUp } from 'lucide-react';
 import WaveTransition from '@/components/WaveTransition';
+import { Car, Shield, TrendingUp } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import React from 'react';
 
 const banks = [
   {

@@ -1,20 +1,19 @@
 "use client";
-import { useEffect } from "react"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { Header } from "@/components/Header"
-import { Hero } from "@/components/Hero"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { ArrowRight, CheckCircle, Instagram, Shield } from "lucide-react"
-import { HomeIcon, Building2, PiggyBank, Heart, CreditCard, Car } from "lucide-react"
-import Link from "next/link"
-import { ProductSection } from "@/components/ProductSection"
-import  Footer from "@/components/Footer"
-import { handleScrollToSection as handleClick } from "@/lib/scroll"
 import WhatsappButton from "@/components/button/WhatsappButton";
-import Image from "next/image";
+import Footer from "@/components/Footer";
+import { Header } from "@/components/Header";
+import { Hero } from "@/components/Hero";
+import { ProductSection } from "@/components/ProductSection";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { handleScrollToSection as handleClick } from "@/lib/scroll";
 import { cn } from "@/lib/utils";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ArrowRight, CheckCircle, Instagram } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect } from "react";
 
 
 const products = [

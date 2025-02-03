@@ -1,12 +1,12 @@
 "use client"
 
-import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
-import { handleScrollToSection as handleClick } from "@/lib/scroll"
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowRight, Users, TrendingUp, Shield, Zap } from "lucide-react"
-import gsap from "gsap"
 import WaveTransition from "@/components/WaveTransition"
+import { handleScrollToSection as handleClick } from "@/lib/scroll"
+import gsap from "gsap"
+import { ArrowRight, Shield, TrendingUp, Users, Zap } from "lucide-react"
+import { useEffect, useRef } from "react"
 
 export function Hero() {
   const heroRef = useRef(null)
