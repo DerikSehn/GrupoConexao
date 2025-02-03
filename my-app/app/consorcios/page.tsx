@@ -142,15 +142,21 @@ const Consorcios: React.FC = () => {
           <h2 className="text-3xl font-bold mb-6 text-center text-primary">Depoimentos de Clientes</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-lg">
-              <p className="text-gray-700 mb-4">"Adquiri meu carro através do consórcio e foi a melhor decisão que tomei. Sem juros e com muita segurança!"</p>
+              <p className="text-gray-700 mb-4">
+                "Adquiri meu carro através do consórcio e foi a melhor decisão que tomei. Sem juros e com muita segurança!"
+                </p>
               <p className="text-primary font-semibold">- João Silva</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-lg">
-              <p className="text-gray-700 mb-4">"O consórcio me permitiu planejar a compra do meu carro de forma tranquila e sem surpresas."</p>
+              <p className="text-gray-700 mb-4">
+                "O consórcio me permitiu planejar a compra do meu carro de forma tranquila e sem surpresas."
+                </p>
               <p className="text-primary font-semibold">- Maria Oliveira</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-lg">
-              <p className="text-gray-700 mb-4">"Recomendo o consórcio para todos que querem adquirir um bem sem pagar juros abusivos."</p>
+              <p className="text-gray-700 mb-4">
+                "Recomendo o consórcio para todos que querem adquirir um bem sem pagar juros abusivos."
+                </p>
               <p className="text-primary font-semibold">- Carlos Santos</p>
             </div>
           </div>
