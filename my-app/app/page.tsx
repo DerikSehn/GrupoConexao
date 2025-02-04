@@ -270,7 +270,6 @@ export default function Home() {
           "Processo de compra simplificado e transparente",
         ]}
       />
-
       {/* Benefícios */}
       <section id="benefits" className="py-12 px-4 bg-primary/5">
         <div className="container mx-auto">
