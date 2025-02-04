@@ -8,11 +8,9 @@ import { ProductSection } from "@/components/ProductSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { handleScrollToSection as handleClick } from "@/lib/scroll";
-import { cn } from "@/lib/utils";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight, CheckCircle, Instagram } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 

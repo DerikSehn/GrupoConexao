@@ -8,6 +8,13 @@ import gsap from "gsap"
 import { ArrowRight, Shield, TrendingUp, Users, Zap } from "lucide-react"
 import { useEffect, useRef } from "react"
 
+const features = [
+  { icon: Users, title: "Leads Qualificados", description: "Clientes prontos para comprar" },
+  { icon: TrendingUp, title: "Alta Conversão", description: "Resultados comprovados" },
+  { icon: Shield, title: "Segurança", description: "Dados protegidos" },
+  { icon: Zap, title: "Agilidade", description: "Processos otimizados" },
+]
+
 export function Hero() {
   const heroRef = useRef(null)
   const mainRef = useRef(null)
@@ -69,12 +76,7 @@ export function Hero() {
           </div>
         </div>
         <div className="mt-8 md:mt-0 grid grid-cols-2 gap-4">
-          {[
-            { icon: Users, title: "Leads Qualificados", description: "Clientes prontos para comprar" },
-            { icon: TrendingUp, title: "Alta Conversão", description: "Resultados comprovados" },
-            { icon: Shield, title: "Segurança", description: "Dados protegidos" },
-            { icon: Zap, title: "Agilidade", description: "Processos otimizados" },
-          ].map((card, index) => (
+          {features.map((card, index) => (
             <Card
               key={index}
               className="hero-card bg-white/10 border-white/20 transition-all duration-300 hover:scale-105"
