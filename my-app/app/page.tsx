@@ -115,16 +115,16 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <h2 className="text-6xl font-thin  mb-6 text-left text-primary">Quem somos</h2>
-              <p className="text-lg mb-4 text-white">
-                No Grupo Conexão, somos movidos pelo propósito de transformar desafios em soluções inteligentes.
-                Credenciados diretamente às principais plataformas digitais e Fintechs, oferecemos muito mais que
-                serviços: entregamos resultados com excelência, inovação e comprometimento.
-              </p>
-              <p className="text-lg text-gray-300">
-                Nossa equipe é formada por profissionais altamente qualificados, prontos para atender às suas
-                necessidades com competência, assertividade e consistência, pilares que sustentam nossa atuação e
-                garantem um impacto real e duradouro.
-              </p>
+                <p className="text-lg mb-4 text-white">
+                No Grupo Conexão, somos movidos pelo propósito de <strong>transformar desafios</strong> em <strong>soluções inteligentes</strong>.
+                Credenciados diretamente às principais <strong>plataformas digitais</strong> e <strong>Fintechs</strong>, oferecemos muito mais que
+                serviços: entregamos <strong>resultados com excelência</strong>, <strong>inovação</strong> e <strong>comprometimento</strong>.
+                </p>
+                <p className="text-lg text-gray-300">
+                Nossa equipe é formada por <strong>profissionais altamente qualificados</strong>, prontos para atender às suas
+                necessidades com <strong>competência</strong>, <strong>assertividade</strong> e <strong>consistência</strong>, pilares que sustentam nossa atuação e
+                garantem um <strong>impacto real e duradouro</strong>.
+                </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <Card className="bg-white border-primary card">
