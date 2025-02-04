@@ -74,12 +74,12 @@ const ContactSection: React.FC = () => {
         <p className="text-lg text-gray-700 mb-8">
           Nossa equipe está pronta para ajudar. Entre em contato com um de nossos especialistas.
         </p>
-        <Slider  {...settings}>
+        <Slider  {...settings} className="flex-grow">
           
           {teamMembers.map((member, index) => (
             <div key={index} className="p-4">
-              <div className="bg-white p-6 rounded-lg shadow-lg flex  flex-col items-center text-center ">
-                <div className="w-full flex justify-center mb-4 rounded-4xl translate-y-">
+              <div className="bg-white p-6 rounded-lg shadow-lg flex  flex-col items-center text-center h-full min-h-[500px] ">
+                <div className="w-full flex justify-center mb-4 rounded-4xl ">
                   <Image
                     src={member.image}
                     alt={member.name}

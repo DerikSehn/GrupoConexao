@@ -1,5 +1,5 @@
 "use client"
-import Footer from '@/components/Footer';
+import ContactSection from '@/components/ContactSection';
 import { Header } from '@/components/Header';
 import { Button } from '@/components/ui/button';
 import WaveTransition from '@/components/WaveTransition';
@@ -164,7 +164,7 @@ const Consorcios: React.FC = () => {
         </div>
       </section>
 
-      <Footer />
+      <ContactSection />
     </div>
   );
 };

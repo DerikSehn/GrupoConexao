@@ -1,6 +1,6 @@
 "use client";
 import WhatsappButton from "@/components/button/WhatsappButton";
-import Footer from "@/components/Footer";
+import ContactSection from "@/components/ContactSection";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import ProductCard from "@/components/ProductCard";
@@ -292,7 +292,7 @@ export default function Home() {
         </div>
       </section>
 
-      <Footer/>
+      <ContactSection/>
 
       {/* CTA */}
       <section id="cta" className="py-12 px-4 text-center bg-black relative">
