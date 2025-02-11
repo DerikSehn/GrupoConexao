@@ -48,8 +48,8 @@ export function ProductSection({ id, title, description, features, children, ind
         )}/>
       }        
     
-      <div className={`container mx-0 lg-mx-auto relative rounded-xl lg:min-h-[600px] py-8 lg:py-0 content-center ${ isEven ? "bg-black" : "bg-transparent"}`}>
-      <h2 className="text-4xl lg:text-6xl font-thin  mb-6 text-center text-primary even:text-white">{title}</h2>
+      <div className={`container mx-auto relative rounded-xl lg:min-h-[600px] py-8 lg:py-0 content-center ${ isEven ? "bg-black" : "bg-transparent"}`}>
+    <h2 className="text-4xl lg:text-6xl font-thin  mb-6 text-center text-primary even:text-white">{title}</h2>
         <p className={`text-lg mb-8 text-center max-w-3xl mx-auto ${isEven ? 'text-gray-400' : 'text-gray-800'}`}>{description}</p>
         <div className="grid md:grid-cols-2 gap-6 max-w-prose mx-auto">
           {features.map((feature, id) => (
