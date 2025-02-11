@@ -58,14 +58,14 @@ export function Hero() {
 
   return (<div ref={mainRef} >
 
-    <section ref={heroRef} className="pt-52 pb-24 px-4 bg-primary bg-gradient-to-t from-primary to-primary-600  ">
+    <section ref={heroRef} className="relative pt-52 pb-24 px-4 bg-primary bg-gradient-to-t from-primary to-primary-600  ">
       <div className="container mx-auto grid md:grid-cols-2 gap-8 items-center">
         <div className="hero-content text-left">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-            Conectando <span className="text-black">Oportunidades</span>, Gerando{" "}
-            <span className="text-black">Resultados</span>
+          <h1 className="text-lg font-secondary mb-4 text-white">
+            Conectando <span className="text-black tracking-tight">Oportunidades</span>, Gerando{" "}
+            <span className="text-black tracking-widest">Resultados</span>
           </h1>
-          <p className="text-xl mb-6 text-white">Encurtamos o processo de captação dos seus clientes, garantimos o lead qualificado</p>
+          <p className="text-4xl mb-6 text-white font-primary"><b>Encurtamos o processo de captação dos seus clientes, garantimos o lead ideal</b></p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button onClick={() => handleClick('#about')} ref={ctaButtonRef} className="bg-black hover:bg-black/90 text-white">
               Saiba Mais <ArrowRight className="ml-2 h-4 w-4" />

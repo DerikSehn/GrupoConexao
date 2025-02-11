@@ -6,13 +6,13 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 const products = [
-  { name: "Crédito Imobiliário", href: "#credito-imobiliario" },
-  { name: "Construção Civil", href: "#construcao-civil" },
-  { name: "Consórcios", href: "#consorcios" },
-  { name: "Plano de Benefícios", href: "#plano-beneficios" },
-  { name: "Seguros", href: "#seguros" },
-  { name: "Crédito Consignado", href: "#credito-consignado" },
-  { name: "Veículos", href: "#veiculos" },
+  { name: "Crédito Imobiliário", href: "/#credito-imobiliario" },
+  { name: "Construção Civil", href: "/#construcao-civil" },
+  { name: "Consórcios", href: "/#consorcios" },
+  { name: "Plano de Benefícios", href: "/#plano-beneficios" },
+  { name: "Seguros", href: "/#seguros" },
+  { name: "Crédito Consignado", href: "/#credito-consignado" },
+  { name: "Veículos", href: "/#veiculos" },
 ]
 
 export function Header() {

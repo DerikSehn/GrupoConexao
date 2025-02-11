@@ -2,7 +2,7 @@
 import WhatsappButton from "@/components/button/WhatsappButton";
 import ContactSection from "@/components/ContactSection";
 import { Header } from "@/components/Header";
-import { Hero } from "@/components/Hero";
+import { Hero } from "@/components/hero/Hero";
 import ProductCard from "@/components/ProductCard";
 import { ProductSection } from "@/components/ProductSection";
 import { Button } from "@/components/ui/button";
@@ -16,25 +16,13 @@ import { useEffect } from "react";
 
 
 const products = [
-  { name: "Abertura Conta Corrente Digital – PJ e PF", href: "/product/abertura-conta-corrente", image: '/images/products/abertura-conta-corrente.jpg' },
-  { name: "Cartão de Crédito Corporativo", href: "/product/cartao-credito-corporativo", image: '/images/products/cartao-credito-corporativo.jpg' },
-  { name: "Reestruturação Empresarial", href: "/product/reestruturacao-empresarial", image: '/images/products/reestruturacao-empresarial.jpg' },
-  { name: "Capital de Giro", href: "/product/capital-giro", image: '/images/products/capital-giro.jpg' },
-  { name: "Recebíveis", href: "/product/recebiveis", image: '/images/products/recebiveis.jpg' },
-  { name: "Empréstimo com Garantia Imóvel", href: "/product/emprestimo-garantia-imovel", image: '/images/products/emprestimo-garantia-imovel.jpg' },
-  { name: "Crédito com Garantia Imóvel", href: "/product/credito-garantia-imovel", image: '/images/products/credito-garantia-imovel.jpg' },
-  { name: "Crédito Imobiliário", href: "/product/credito-imobiliario", image: '/images/products/credito-imobiliario.jpg' },
-  { name: "CDC Lojista", href: "/product/cdc-lojista", image: '/images/products/cdc-lojista.jpg' },
-  { name: "Consignado Público e Privado", href: "/product/consignado-publico-privado", image: '/images/products/consignado-publico-privado.jpg' },
-  { name: "Convênios Governos", href: "/product/convenios-governos", image: '/images/products/convenios-governos.jpg' },
-  { name: "Convênios Prefeituras", href: "/product/convenios-prefeituras", image: '/images/products/convenios-prefeituras.webp' },
-  { name: "Construção Civil", href: "/product/construcao-civil", image: '/images/products/construcao-civil.jpg' },
-  { name: "Consórcios", href: "/product/consorcios", image: '/images/products/consorcios.jpg' },
-  { name: "Seguros", href: "/product/seguros", image: '/images/products/seguros.jpg' },
-  { name: "Plano de Benefícios (saúde)", href: "https://api.whatsapp.com/send?phone=5551981728039&text=Ol%C3%A1", image: '/images/products/plano-beneficios.jpg' },
-  { name: "Plano de Saúde", href: "https://api.whatsapp.com/send?phone=5551981728039&text=Ol%C3%A1", image: '/images/products/plano-saude.jpg' },
-  { name: "Assessoria Jurídica Empresarial", href: "https://api.whatsapp.com/send?phone=5551981728039&text=Ol%C3%A1", image: '/images/products/assessoria-juridica-empresarial.jpg' },
-  { name: "Veículos", href: "https://api.whatsapp.com/send?phone=5551981728039&text=Ol%C3%A1", image: '/images/products/veiculos.webp' },
+  { name: "Crédito Imobiliário", href: "#credito-imobiliario", image: '/images/products/credito-imobiliario.jpg' },
+  { name: "Construção Civil", href: "#construcao-civil", image: '/images/products/construcao-civil.jpg' },
+  { name: "Consórcios", href: "#consorcios", image: '/images/products/consorcios.jpg' },
+  { name: "Plano de Benefícios (Saúde)", href: "#plano-beneficios", image: '/images/products/plano-beneficios.jpg' },
+  { name: "Seguros", href: "#seguros", image: '/images/products/seguros.jpg' },
+  { name: "Crédito Consignado Público e Privado", href: "#credito-consignado", image: '/images/products/consignado-publico-privado.jpg' },
+  { name: "Veículos", href: "#veiculos", image: '/images/products/veiculos.webp' },
 ];
 gsap.registerPlugin(ScrollTrigger)
 
@@ -155,10 +143,9 @@ export default function Home() {
       </section>
 
       {/* Nossos Produtos */}
-      <section id="products" className="py-12 px-4 bg-white">
-        <div className="container mx-auto">
-          {/* <h2 className="text-3xl font-bold mb-8 text-center text-primary">Nossos Produtos</h2> */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+      <section id="products" className="py-12 px-2 md:px-4  bg-white">
+        <div className="container lg:mx-auto px-0 mx-0">
+           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
           {products.map((product, index) => (
             <ProductCard 
               key={product.name} 
@@ -168,7 +155,8 @@ export default function Home() {
           ))}         
            </div>
         </div>
-      </section>
+      </section> 
+     
 
       {/* Seções de Produtos */}
       <ProductSection

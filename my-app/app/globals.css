@@ -41,11 +41,22 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-primary;
   }
 }
 
 
 html {
   scroll-behavior: smooth;
+}
+
+
+@font-face {
+  font-family: 'PrimaryFont';
+  src: url('../public/fonts/primary-font.otf');
+}
+
+@font-face {
+  font-family: 'SecondaryFont';
+  src: url('../public/fonts/secondary-font.otf');
 }

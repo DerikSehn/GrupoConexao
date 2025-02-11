@@ -10,34 +10,54 @@ import React from 'react';
 
 const banks = [
   {
-    name: 'Banco A',
-    image: '/bg/placeholder.svg',
+    name: 'Ancora',
+    image: '/images/consorcios/bancos/ancora.png',
     info: [
       'Taxa de administração competitiva',
       'Parcelas acessíveis',
       'Atendimento personalizado',
     ],
-    whatsappLink: 'https://api.whatsapp.com/send?phone=5551999300707&text=Olá,%20tenho%20interesse%20no%20consórcio%20do%20Banco%20A',
+    whatsappLink: 'https://api.whatsapp.com/send?phone=5551981728039&text=Olá,%20tenho%20interesse%20no%20consórcio%20do%20Banco%20A',
   },
   {
-    name: 'Banco B',
-    image: '/bg/placeholder.svg',
+    name: 'BrBens',
+    image: '/images/consorcios/bancos/brbens.png',
     info: [
       'Sem taxa de adesão',
       'Parcelas fixas',
       'Sorteios mensais',
     ],
-    whatsappLink: 'https://api.whatsapp.com/send?phone=5551999300707&text=Olá,%20tenho%20interesse%20no%20consórcio%20do%20Banco%20B',
+    whatsappLink: 'https://api.whatsapp.com/send?phone=5551981728039&text=Olá,%20tenho%20interesse%20no%20consórcio%20do%20Banco%20B',
   },
   {
-    name: 'Banco C',
-    image: '/bg/placeholder.svg',
+    name: 'Embracon',
+    image: '/images/consorcios/bancos/embracon.png',
     info: [
       'Taxa de administração reduzida',
       'Flexibilidade de pagamento',
       'Consultoria financeira gratuita',
     ],
-    whatsappLink: 'https://api.whatsapp.com/send?phone=5551999300707&text=Olá,%20tenho%20interesse%20no%20consórcio%20do%20Banco%20C',
+    whatsappLink: 'https://api.whatsapp.com/send?phone=5551981728039&text=Olá,%20tenho%20interesse%20no%20consórcio%20do%20Banco%20C',
+  },
+  {
+    name: 'Gazin',
+    image: '/images/consorcios/bancos/gazin.png',
+    info: [
+      'Melhores taxas do mercado',
+      'Parcelas acessíveis',
+      'Sorteios mensais',
+    ],
+    whatsappLink: 'https://api.whatsapp.com/send?phone=5551981728039&text=Olá,%20tenho%20interesse%20no%20consórcio%20do%20Banco%20C',
+  },
+  {
+    name: 'Yamaha Consorcios',
+    image: '/images/consorcios/bancos/yamaha.png',
+    info: [
+      'Taxa de administração reduzida',
+      'Parcelas fixas',
+      'Sorteios mensais',
+        ],
+    whatsappLink: 'https://api.whatsapp.com/send?phone=5551981728039&text=Olá,%20tenho%20interesse%20no%20consórcio%20do%20Banco%20C',
   },
 ];
 
@@ -46,17 +66,18 @@ const Consorcios: React.FC = () => {
     <div className="min-h-screen bg-gray-100 pt-20">
       <Header />
 
-      <section className="py-12 px-4 bg-primary text-white">
-        <div className="container mx-auto text-center justify-center">
+      <section className="relative py-12 px-4 text-white bg-black">
+        {/* background image */}
+        <Image src="/images/products/consorcios.jpg" alt="Consórcios" layout="fill" objectFit="cover" className="blur-sm z-0 brightness-50" />
+        <div className="relative z-10 container mx-auto text-center justify-center  min-h-[500px] content-center">
           <h1 className="text-4xl font-bold mb-4">Consórcios</h1>
-          <p className="text-xl mb-8 max-w-prose mx-auto">
+          <p className="text-xl mb-8 max-w-prose mx-auto font-secondary">
             Nossos consórcios oferecem uma forma inteligente e planejada de adquirir bens e serviços, com condições especiais e flexibilidade.
           </p>
         </div>
       </section>
-      <WaveTransition />
-
-      <section className="py-12 px-4">
+ 
+    {/*   <section className="py-12 px-4">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-6 text-center text-primary">Vantagens de Adquirir um Carro com Consórcio</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -77,7 +98,7 @@ const Consorcios: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="py-12 px-4 bg-gray-200">
         <div className="container mx-auto">
@@ -118,7 +139,7 @@ const Consorcios: React.FC = () => {
                     src={bank.image}
                     alt={bank.name}
                     fill
-                    className="object-cover"
+                    className="object-contain"
                   />
                 </div>
                 <div className="md:w-2/3 md:ml-6 p-6">
