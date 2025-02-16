@@ -1,6 +1,5 @@
 "use client"
 import ContactSection from '@/components/ContactSection';
-import { Header } from '@/components/Header';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -62,8 +61,6 @@ const banks = [
 const Consorcios: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-100 pt-20">
-      <Header />
-
       <section className="relative py-12 px-4 text-white bg-black">
         {/* background image */}
         <Image src="/images/products/consorcios.jpg" alt="Consórcios" layout="fill" objectFit="cover" className="blur-sm z-0 brightness-50" />

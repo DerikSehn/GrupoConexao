@@ -1,7 +1,6 @@
 "use client";
 import WhatsappButton from "@/components/button/WhatsappButton";
 import ContactSection from "@/components/ContactSection";
-import { Header } from "@/components/Header";
 import { Hero } from "@/components/hero/Hero";
 import ProductCard from "@/components/ProductCard";
 import { ProductSection } from "@/components/ProductSection";
@@ -88,11 +87,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       <WhatsappButton link="https://api.whatsapp.com/send?phone=5551999300707&text=Ol%C3%A1" className="fixed bottom-2 right-2" />
-      <Header />
-
       <Hero />
-
-
       {/* Sobre Nós */}
       <section id="about" className="relative mb-10">
         <span className=" absolute inset-x-1/2 inset-y-0 right-0 z-0 bg-black py-24 px-8"/>
@@ -290,7 +285,7 @@ export default function Home() {
           <p className="text-xl mb-8 text-white/90">
             Entre em contato conosco e descubra como podemos ajudar você a alcançar resultados extraordinários.
           </p>
-          <Button onClick={() => handleClick('https://api.whatsapp.com/send?phone=5551999300707&text=Ol%C3%A1')} className="bg-primary hover:bg-primary/90 text-white text-lg px-8 py-3 mb-4">Fale Conosco</Button>
+          <Button onClick={() => handleClick('#contact')} className="bg-primary hover:bg-primary/90 text-white text-lg px-8 py-3 mb-4">Fale Conosco</Button>
           <div className="flex flex-col items-center gap-4">
             <a href="https://www.instagram.com/grupoconexao_br" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 text-lg flex gap-4">
               <Instagram className=""/>
