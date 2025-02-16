@@ -1,4 +1,12 @@
-export const teamMembers = [
+export interface Member {
+  image: string;
+  name: string;
+  description: string;
+  email: string;
+  phone: string;
+}
+
+export const teamMembers: Member[] = [
   {
     name: 'Sandro Marques',
     image: '/images/sandro.jpeg',
@@ -28,3 +36,4 @@ export const teamMembers = [
     description: 'Estrategista de tráfego pago, empreendedor e consultor de negócios, com mais de 15 anos de experiência em estratégia, planejamento e gestão.',
   },
 ];
+

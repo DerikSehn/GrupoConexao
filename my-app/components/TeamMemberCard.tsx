@@ -1,8 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
 import { Mail, Phone } from 'lucide-react';
+import { Member } from '@/data/teamMembers';
 
-const TeamMemberCard: React.FC<{ member: any }> = ({ member }) => {
+
+const TeamMemberCard: React.FC<{ member: Member }> = ({ member }) => {
   return (
     <div className="p-4">
       <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center h-full min-h-[500px]">
