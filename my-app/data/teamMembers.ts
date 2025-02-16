@@ -9,7 +9,7 @@ export interface Member {
 export const teamMembers: Member[] = [
   {
     name: 'Sandro Marques',
-    image: '/images/sandro.jpeg',
+    image: '/images/sandro.png',
     email: 'sandro.marques@conexao-suc.com.br',
     phone: '(51) 98172 8039',
     description: 'Diretor Executivo com vasta experiência em liderança e gestão de equipes.',

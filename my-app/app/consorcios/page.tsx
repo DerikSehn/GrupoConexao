@@ -4,65 +4,13 @@ import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import { banks } from '@/data/banks';
 
-const banks = [
-  {
-    name: 'Ancora',
-    image: '/images/consorcios/bancos/ancora.png',
-    info: [
-      'Taxa de administração competitiva',
-      'Parcelas acessíveis',
-      'Atendimento personalizado',
-    ],
-    whatsappLink: 'https://api.whatsapp.com/send?phone=5551981728039&text=Olá,%20tenho%20interesse%20no%20consórcio%20do%20Banco%20A',
-  },
-  {
-    name: 'BrBens',
-    image: '/images/consorcios/bancos/brbens.png',
-    info: [
-      'Sem taxa de adesão',
-      'Parcelas fixas',
-      'Sorteios mensais',
-    ],
-    whatsappLink: 'https://api.whatsapp.com/send?phone=5551981728039&text=Olá,%20tenho%20interesse%20no%20consórcio%20do%20Banco%20B',
-  },
-  {
-    name: 'Embracon',
-    image: '/images/consorcios/bancos/embracon.png',
-    info: [
-      'Taxa de administração reduzida',
-      'Flexibilidade de pagamento',
-      'Consultoria financeira gratuita',
-    ],
-    whatsappLink: 'https://api.whatsapp.com/send?phone=5551981728039&text=Olá,%20tenho%20interesse%20no%20consórcio%20do%20Banco%20C',
-  },
-  {
-    name: 'Gazin',
-    image: '/images/consorcios/bancos/gazin.png',
-    info: [
-      'Melhores taxas do mercado',
-      'Parcelas acessíveis',
-      'Sorteios mensais',
-    ],
-    whatsappLink: 'https://api.whatsapp.com/send?phone=5551981728039&text=Olá,%20tenho%20interesse%20no%20consórcio%20do%20Banco%20C',
-  },
-  {
-    name: 'Yamaha Consorcios',
-    image: '/images/consorcios/bancos/yamaha.png',
-    info: [
-      'Taxa de administração reduzida',
-      'Parcelas fixas',
-      'Sorteios mensais',
-        ],
-    whatsappLink: 'https://api.whatsapp.com/send?phone=5551981728039&text=Olá,%20tenho%20interesse%20no%20consórcio%20do%20Banco%20C',
-  },
-];
 
 const Consorcios: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-100 pt-20">
       <section className="relative py-12 px-4 text-white bg-black">
-        {/* background image */}
         <Image src="/images/products/consorcios.jpg" alt="Consórcios" layout="fill" objectFit="cover" className="blur-sm z-0 brightness-50" />
         <div className="relative z-10 container mx-auto text-center justify-center  min-h-[500px] content-center">
           <h1 className="text-4xl font-bold mb-4">Consórcios</h1>
@@ -71,30 +19,6 @@ const Consorcios: React.FC = () => {
           </p>
         </div>
       </section>
- 
-    {/*   <section className="py-12 px-4">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-6 text-center text-primary">Vantagens de Adquirir um Carro com Consórcio</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center">
-              <Car className="h-12 w-12 text-primary mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Sem Juros</h3>
-              <p className="text-gray-700">Adquira seu carro sem pagar juros, apenas uma taxa de administração.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center">
-              <Shield className="h-12 w-12 text-primary mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Segurança</h3>
-              <p className="text-gray-700">Seu dinheiro é protegido por uma administradora de consórcios autorizada pelo Banco Central.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center">
-              <TrendingUp className="h-12 w-12 text-primary mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Valorização</h3>
-              <p className="text-gray-700">Seu investimento pode valorizar ao longo do tempo, garantindo um bom negócio.</p>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
       <section className="py-12 px-4 bg-gray-200">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-6 text-center text-primary">Como Funciona</h2>

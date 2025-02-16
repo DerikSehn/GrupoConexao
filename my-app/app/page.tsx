@@ -6,6 +6,7 @@ import ProductCard from "@/components/ProductCard";
 import { ProductSection } from "@/components/ProductSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { products } from "@/data/products";
 import { handleScrollToSection as handleClick } from "@/lib/scroll";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -14,15 +15,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 
 
-const products = [
-  { name: "Crédito Imobiliário", href: "#credito-imobiliario", image: '/images/products/credito-imobiliario.jpg' },
-  { name: "Construção Civil", href: "#construcao-civil", image: '/images/products/construcao-civil.jpg' },
-  { name: "Consórcios", href: "#consorcios", image: '/images/products/consorcios.jpg' },
-  { name: "Plano de Benefícios (Saúde)", href: "#plano-beneficios", image: '/images/products/plano-beneficios.jpg' },
-  { name: "Seguros", href: "#seguros", image: '/images/products/seguros.jpg' },
-  { name: "Crédito Consignado Público e Privado", href: "#credito-consignado", image: '/images/products/consignado-publico-privado.jpg' },
-  { name: "Veículos", href: "#veiculos", image: '/images/products/veiculos.webp' },
-];
+
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Home() {
@@ -109,25 +102,25 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <Card className="bg-white border-primary card">
-                <CardContent className="p-6 flex flex-col items-center text-center">
-                  <h3 className="text-2xl font-bold text-black mb-2">5+</h3>
+                <CardContent className=" p-6 flex flex-col items-center min-h-full text-center">
+                  <h3 className="text-2xl font-bold text-black mb-2">17+</h3>
                   <p className="text-sm text-gray-600">Anos de Experiência</p>
                 </CardContent>
               </Card>
               <Card className="bg-white border-primary card">
-                <CardContent className="p-6 flex flex-col items-center text-center">
-                  <h3 className="text-2xl font-bold text-black mb-2">1000+</h3>
+                <CardContent className=" p-6 flex flex-col items-center min-h-full text-center">
+                  <h3 className="text-2xl font-bold text-black mb-2">95 mil+</h3>
                   <p className="text-sm text-gray-600">Clientes Satisfeitos</p>
                 </CardContent>
               </Card>
               <Card className="bg-white border-primary card">
-                <CardContent className="p-6 flex flex-col items-center text-center">
-                  <h3 className="text-2xl font-bold text-black mb-2">50+</h3>
+                <CardContent className=" p-6 flex flex-col items-center min-h-full text-center">
+                  <h3 className="text-2xl font-bold text-black mb-2">44+</h3>
                   <p className="text-sm text-gray-600">Parceiros de Negócios</p>
                 </CardContent>
               </Card>
               <Card className="bg-white border-primary card">
-                <CardContent className="p-6 flex flex-col items-center text-center">
+                <CardContent className=" p-6 flex flex-col items-center min-h-full text-center">
                   <h3 className="text-2xl font-bold text-black mb-2">24/7</h3>
                   <p className="text-sm text-gray-600">Suporte Dedicado</p>
                 </CardContent>
@@ -277,8 +270,7 @@ export default function Home() {
 
       <ContactSection/>
 
-      {/* CTA */}
-      <section id="cta" className="py-12 px-4 text-center bg-black relative">
+      <section id="instagram" className="py-12 px-4 text-center bg-black relative">
         <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: 'url(/images/cta-bg.jpg)' }}></div>
         <div className="container mx-auto relative z-10">
           <h2 className="text-3xl font-bold mb-4 text-white">Pronto para Impulsionar Seu Negócio?</h2>
@@ -296,6 +288,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
     </div>
 
 

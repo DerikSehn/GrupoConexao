@@ -26,7 +26,7 @@ const TeamMemberCard: React.FC<{ member: Member }> = ({ member }) => {
           </div>
           <div className="flex items-center justify-center gap-2 text-gray-700">
             <Phone className="w-5 h-5 text-black" />
-            <a href={`tel:${member.phone}`} className="hover:text-black">{member.phone}</a>
+            <a href={`https://api.whatsapp.com/send?phone=55${member.phone.replace(/\D/g, '')}&text=Ol%C3%A1`} className="hover:text-black">{member.phone}</a>
           </div>
         </div>
       </div>
