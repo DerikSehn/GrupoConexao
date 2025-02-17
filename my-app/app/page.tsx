@@ -14,7 +14,7 @@ import { ArrowRight, CheckCircle, Instagram } from "lucide-react";
 import Link from "next/link";
 import { useEffect } from "react";
 import TextParallax from "@/components/TextParallax";
-import { banks } from "@/data/banks";
+import { partners } from "@/data/partners";
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -135,7 +135,7 @@ export default function Home() {
       <h2 className="text-5xl font-thin my-10 mt-20  text-center text-primary">Parceiros</h2>
 
       <TextParallax
-        images={banks.map((bank) => ({
+        images={partners.map((bank) => ({
           src: bank.image,
         }))}
       />

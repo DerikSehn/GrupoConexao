@@ -49,7 +49,7 @@ const Consorcios: React.FC = () => {
 
       <section className="py-12 px-4">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-6 text-center text-primary">Escolha seu Banco</h2>
+          <h2 className="text-3xl font-bold mb-6 text-center text-primary">Escolha seu Consórcio</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {banks.map((bank, index) => (
               <div key={index} className="bg-white  rounded-lg shadow-lg flex flex-col md:flex-row items-center text-center md:text-left">

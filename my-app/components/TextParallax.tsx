@@ -50,7 +50,7 @@ const Item: React.FC<{ src: string }> = ({ src }) => {
   return (
     <div className="px-5 flex gap-5 items-center">
       <span className="relative h-[7.5vw] aspect-[4/2] rounded-full overflow-hidden">
-        <Image style={{ objectFit: 'cover' }} src={src} alt="image" fill />
+        <Image style={{ objectFit: 'contain' }} src={src} alt="image" fill />
       </span>
     </div>
   );
