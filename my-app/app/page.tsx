@@ -13,8 +13,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight, CheckCircle, Instagram } from "lucide-react";
 import Link from "next/link";
 import { useEffect } from "react";
-
-
+import TextParallax from "@/components/TextParallax";
+import { banks } from "@/data/banks";
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -81,6 +81,8 @@ export default function Home() {
     <div className="min-h-screen bg-white overflow-x-hidden">
       <WhatsappButton link="https://api.whatsapp.com/send?phone=5551999300707&text=Ol%C3%A1" className="fixed bottom-2 right-2" />
       <Hero />
+
+
       {/* Sobre Nós */}
       <section id="about" className="relative mb-10">
         <span className=" absolute inset-x-1/2 inset-y-0 right-0 z-0 bg-black py-24 px-8"/>
@@ -130,7 +132,18 @@ export default function Home() {
         </div>
       </section>
 
+      <h2 className="text-5xl font-thin my-10 mt-20  text-center text-primary">Parceiros</h2>
+
+      <TextParallax
+        images={banks.map((bank) => ({
+          src: bank.image,
+        }))}
+      />
+
+
       {/* Nossos Produtos */}
+      <h2 className="text-5xl font-thin  my-10 mt-20 text-center text-primary">Nossos Serviços</h2>
+      
       <section id="products" className="py-12 px-2 md:px-4  bg-white">
         <div className="container lg:mx-auto px-0 mx-0">
            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
