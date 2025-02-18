@@ -46,7 +46,7 @@ export const partners = [
     },
     {
         name: 'RMX',
-        image: '/images/consorcios/parceiros/rmx.png',
+        image: '/images/consorcios/parceiros/rnx.jpeg',
         info: [
         'Taxa de administração reduzida',
         'Parcelas fixas',
