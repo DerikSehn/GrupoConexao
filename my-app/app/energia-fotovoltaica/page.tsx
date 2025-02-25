@@ -84,7 +84,7 @@ const EnergiaFotovoltaica: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 pt-20">
-      <section ref={(el) => sectionRefs.current[0] = el as any} className="relative py-12 px-4 text-white bg-black">
+      <section ref={(el) => {sectionRefs.current[0] = el}} className="relative py-12 px-4 text-white bg-black">
         <Image src="/images/products/energia.jpg" alt="Energia Fotovoltaica" layout="fill" objectFit="cover" className="blur-sm z-0 brightness-50" />
         <div className="relative z-10 container mx-auto text-center justify-center min-h-[500px] content-center">
           <h1 className="text-4xl font-bold mb-4">Energia Fotovoltaica</h1>
@@ -93,7 +93,7 @@ const EnergiaFotovoltaica: React.FC = () => {
           </p>
         </div>
       </section>
-      <section ref={(el) => sectionRefs.current[1] = el as any} className="py-12 px-4 bg-gray-200">
+      <section ref={(el) => {sectionRefs.current[1] = el}} className="py-12 px-4 bg-gray-200">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-6 text-center text-primary">Visão Geral do Mercado</h2>
           <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -115,7 +115,7 @@ const EnergiaFotovoltaica: React.FC = () => {
         </div>
       </section>
 
-      <section ref={(el) => sectionRefs.current[2] = el as any} className="py-12 px-4 bg-gray-200">
+      <section ref={(el) => {sectionRefs.current[2] = el}} className="py-12 px-4 bg-gray-200">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-6 text-center text-primary">Crescimento do Mercado</h2>
           <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -137,7 +137,7 @@ const EnergiaFotovoltaica: React.FC = () => {
         </div>
       </section>
 
-      <section ref={(el) => sectionRefs.current[3] = el as any} className="py-12 px-4 bg-gray-200">
+      <section ref={(el) => {sectionRefs.current[3] = el}} className="py-12 px-4 bg-gray-200">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-6 text-center text-primary">Distribuição de Energia</h2>
           <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -159,7 +159,7 @@ const EnergiaFotovoltaica: React.FC = () => {
         </div>
       </section>
 
-      <section ref={(el) => sectionRefs.current[4] = el as any} className="py-12 px-4">
+      <section ref={(el) => {sectionRefs.current[4] = el}} className="py-12 px-4">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-6 text-center text-primary">Depoimentos de Clientes</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
