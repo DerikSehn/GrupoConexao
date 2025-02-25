@@ -2,21 +2,28 @@ import { useEffect } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { Card, CardContent } from "@/components/ui/card"
-import { CheckCircle } from "lucide-react"
+import { ArrowRight, CheckCircle } from "lucide-react"
 import { cn } from "@/lib/utils"
+import Link from "next/link"
+import { Button } from "./ui/button"
+
+type ButtonProps = {
+  title?: string;
+  href: string;
+}
 
 interface ProductSectionProps {
-  id: string
-  title: string
-  description: string
-  features: string[]
-  children?: React.ReactNode
-  index: number
+  id: string;
+  title: string;
+  description: string;
+  features: string[];
+  button?: ButtonProps;
+  index: number;
 }
 
 gsap.registerPlugin(ScrollTrigger)
 
-export function ProductSection({ id, title, description, features, children, index }: ProductSectionProps) {
+export function ProductSection({ id, title, description, features, button, index }: ProductSectionProps) {
 
   const isEven = index % 2 === 0;
   useEffect(() => {
@@ -61,7 +68,16 @@ export function ProductSection({ id, title, description, features, children, ind
             </Card>
           ))}
         </div>
-        {children}
+        {button &&
+
+      <div className="flex justify-center p-6">
+      <Link href={button.href} className="text-white hover:text-gray-300 text-lg group ">
+        <Button className="bg-primary hover:bg-primary/90 text-white text-lg p-8 flex items-center ">
+          { button.title || "Saiba mais"} <ArrowRight className="ml-2 scale-[2] group-hover:translate-x-2 duration-400 transition-transform" />
+        </Button>
+      </Link> 
+    </div>
+        }
       </div>
     </section>
   )
