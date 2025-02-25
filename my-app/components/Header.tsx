@@ -38,13 +38,12 @@ export function Header() {
         window.removeEventListener('scroll', handleScroll)
       }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lastScrollY])
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 bg-black text-white transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/" className="flex items-center bg-black py-3 -mb-6 px-4 -mx-4 rounded-b-lg">
+        <Link href="/" className="flex items-center bg-black py-3 -mb-6 px-4 -mx-4 rounded-b-lg hover:animate-pulse">
           <Image
             src="/logo.png"
             alt="Grupo Conexão"
@@ -55,11 +54,22 @@ export function Header() {
         </Link>
         <nav className="hidden md:flex space-x-4">
           {products.map((product) => (
-            <Link key={product.name} href={product.href} className="text-white hover:text-orange-400 transition-colors">
+            <Link
+              key={product.name}
+              href={product.href}
+              className="text-white hover:text-orange-400 transition-colors"
+            >
               {product.name}
             </Link>
           ))}
         </nav>
+        {/* Botão Fale Conosco para computadores */}
+        <Link
+          href="#contact"
+          className="hidden md:inline-block bg-orange-400 text-black px-4 py-2 rounded hover:bg-orange-500 transition-colors"
+        >
+          Fale Conosco
+        </Link>
         <Sheet>
           <SheetTrigger asChild>
             <Button variant="ghost" className="md:hidden text-white">
