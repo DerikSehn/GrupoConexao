@@ -170,7 +170,7 @@ const EnergiaFotovoltaica: React.FC = () => {
       <section ref={(el) => {sectionRefs.current[4] = el}} className="relative py-12 bg-black min-h-[600px] flex flex-col justify-center">
         <Image src="/images/products/capital-giro.jpg" alt="Background" layout="fill" objectFit="cover" className="blur-sm z-0 brightness-50" />
         <div className="relative z-10 container mx-auto max-w-prose text-center bg-gray-100 rounded-[42px] px-0">
-          <div className="p-2 lg:p-12 ">
+          <div className="p-4 lg:p-12 ">
           <h2 className="text-3xl font-bold mb-6 text-primary">Em que faixa de valor está a sua conta de luz atualmente?</h2>
           <p className="text-lg mb-4 text-gray-700">
             Selecione a faixa de valor da sua conta de luz para que possamos oferecer a melhor solução de energia fotovoltaica para você.
