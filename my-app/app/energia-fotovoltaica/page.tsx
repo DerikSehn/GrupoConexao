@@ -101,73 +101,8 @@ const EnergiaFotovoltaica: React.FC = () => {
           </p>
         </div>
       </section>
-      <section ref={(el) => {sectionRefs.current[1] = el}} className="py-12 px-4 bg-gray-200">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-6 text-center text-primary">Visão Geral do Mercado</h2>
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <p className="text-lg mb-4 text-gray-700">
-                Houve um aumento significativo na autorização de projetos de PV solar entre março de 2022 e fevereiro de 2023, com um total de 42,4 GW autorizados, levando a uma capacidade total de 86 GW. Isso representa um crescimento notável de 97%.
-              </p>
-              <p className="text-lg mb-4 text-gray-700">
-                O Mercado de Usinas registrou um crescimento de 58,6% (2.835MW) em 2022 em comparação com o ano anterior, impulsionado principalmente pelo Mercado Livre, que representa 61% da capacidade instalada até fevereiro de 2023.
-              </p>
-              <p className="text-lg mb-4 text-gray-700">
-                O volume de Contratos de Compra de Energia (PPAs) solares mapeados alcançou 11,9 GWp, ampliando seu alcance para novos setores de negócios, como saúde, produção de alimentos e tecnologia.
-              </p>
-            </div>
-            <div className="mt-8">
-              <Bar data={barData} options={options} />
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <section ref={(el) => {sectionRefs.current[2] = el}} className="py-12 px-4 bg-gray-200">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-6 text-center text-primary">Crescimento do Mercado</h2>
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="mt-8">
-              <Line data={lineData} options={options} />
-            </div>
-            <div>
-              <p className="text-lg mb-4 text-gray-700">
-                O Projeto de Lei 414/2021 propõe a abertura gradual do mercado em até 42 meses da sua publicação para todas as UCs, inclusive as atendidas em baixa tensão. A Portaria Normativa 50/2022 já permite que consumidores do Grupo A, independentemente do consumo, possam comprar energia elétrica de qualquer supridor a partir de janeiro de 2024.
-              </p>
-              <p className="text-lg mb-4 text-gray-700">
-                Com a abertura gradual do Mercado Livre de energia, um maior número de consumidores necessariamente estará habilitado para migração. Atualmente, 31,5% dos consumidores habilitados estão no ambiente livre, ou seja, 68,5% podem migrar e não migraram ainda.
-              </p>
-              <p className="text-lg mb-4 text-gray-700">
-                O mercado potencial de atuação é de 202 mil unidades consumidoras em todo o Brasil, o que equivale a um volume de aproximadamente 2.6 GW. Como já ocorre em outros países, a tendência é de que no Brasil a abertura total do ACL se dê em 2028 para todos os consumidores, incluindo os residenciais.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section ref={(el) => {sectionRefs.current[3] = el}} className="py-12 px-4 bg-gray-200">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-6 text-center text-primary">Distribuição de Energia</h2>
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="mt-8">
-              <Pie data={pieData} options={options} />
-            </div>
-            <div>
-              <p className="text-lg mb-4 text-gray-700">
-                O Projeto de Lei 414/2021 propõe a abertura gradual do mercado em até 42 meses da sua publicação para todas as UCs, inclusive as atendidas em baixa tensão. A Portaria Normativa 50/2022 já permite que consumidores do Grupo A, independentemente do consumo, possam comprar energia elétrica de qualquer supridor a partir de janeiro de 2024.
-              </p>
-              <p className="text-lg mb-4 text-gray-700">
-                Com a abertura gradual do Mercado Livre de energia, um maior número de consumidores necessariamente estará habilitado para migração. Atualmente, 31,5% dos consumidores habilitados estão no ambiente livre, ou seja, 68,5% podem migrar e não migraram ainda.
-              </p>
-              <p className="text-lg mb-4 text-gray-700">
-                O mercado potencial de atuação é de 202 mil unidades consumidoras em todo o Brasil, o que equivale a um volume de aproximadamente 2.6 GW. Como já ocorre em outros países, a tendência é de que no Brasil a abertura total do ACL se dê em 2028 para todos os consumidores, incluindo os residenciais.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section ref={(el) => {sectionRefs.current[4] = el}} className="relative py-12 bg-black min-h-[600px] flex flex-col justify-center">
+      <section ref={(el) => {sectionRefs.current[1] = el}} className="relative py-12 bg-black min-h-[600px] flex flex-col justify-center">
         <Image src="/images/products/capital-giro.jpg" alt="Background" layout="fill" objectFit="cover" className="blur-sm z-0 brightness-50" />
         <div className="relative z-10 container mx-auto max-w-prose text-center bg-gray-100 rounded-[42px] px-0">
           <div className="p-4 lg:p-12 ">
@@ -201,6 +136,72 @@ const EnergiaFotovoltaica: React.FC = () => {
           <Button onClick={handleWhatsAppLink} className="bg-primary hover:bg-primary/90 text-white text-lg px-8 py-3 w-full h-20 rounded-b-[42px]">
             Enviar
           </Button>
+        </div>
+      </section>
+
+      <section ref={(el) => {sectionRefs.current[2] = el}} className="py-12 px-4 bg-gray-200">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold mb-6 text-center text-primary">Visão Geral do Mercado</h2>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <p className="text-lg mb-4 text-gray-700">
+                Houve um aumento significativo na autorização de projetos de PV solar entre março de 2022 e fevereiro de 2023, com um total de 42,4 GW autorizados, levando a uma capacidade total de 86 GW. Isso representa um crescimento notável de 97%.
+              </p>
+              <p className="text-lg mb-4 text-gray-700">
+                O Mercado de Usinas registrou um crescimento de 58,6% (2.835MW) em 2022 em comparação com o ano anterior, impulsionado principalmente pelo Mercado Livre, que representa 61% da capacidade instalada até fevereiro de 2023.
+              </p>
+              <p className="text-lg mb-4 text-gray-700">
+                O volume de Contratos de Compra de Energia (PPAs) solares mapeados alcançou 11,9 GWp, ampliando seu alcance para novos setores de negócios, como saúde, produção de alimentos e tecnologia.
+              </p>
+            </div>
+            <div className="mt-8">
+              <Bar data={barData} options={options} />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section ref={(el) => {sectionRefs.current[3] = el}} className="py-12 px-4 bg-gray-200">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold mb-6 text-center text-primary">Crescimento do Mercado</h2>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="mt-8">
+              <Line data={lineData} options={options} />
+            </div>
+            <div>
+              <p className="text-lg mb-4 text-gray-700">
+                O Projeto de Lei 414/2021 propõe a abertura gradual do mercado em até 42 meses da sua publicação para todas as UCs, inclusive as atendidas em baixa tensão. A Portaria Normativa 50/2022 já permite que consumidores do Grupo A, independentemente do consumo, possam comprar energia elétrica de qualquer supridor a partir de janeiro de 2024.
+              </p>
+              <p className="text-lg mb-4 text-gray-700">
+                Com a abertura gradual do Mercado Livre de energia, um maior número de consumidores necessariamente estará habilitado para migração. Atualmente, 31,5% dos consumidores habilitados estão no ambiente livre, ou seja, 68,5% podem migrar e não migraram ainda.
+              </p>
+              <p className="text-lg mb-4 text-gray-700">
+                O mercado potencial de atuação é de 202 mil unidades consumidoras em todo o Brasil, o que equivale a um volume de aproximadamente 2.6 GW. Como já ocorre em outros países, a tendência é de que no Brasil a abertura total do ACL se dê em 2028 para todos os consumidores, incluindo os residenciais.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section ref={(el) => {sectionRefs.current[4] = el}} className="py-12 px-4 bg-gray-200">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold mb-6 text-center text-primary">Distribuição de Energia</h2>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="mt-8">
+              <Pie data={pieData} options={options} />
+            </div>
+            <div>
+              <p className="text-lg mb-4 text-gray-700">
+                O Projeto de Lei 414/2021 propõe a abertura gradual do mercado em até 42 meses da sua publicação para todas as UCs, inclusive as atendidas em baixa tensão. A Portaria Normativa 50/2022 já permite que consumidores do Grupo A, independentemente do consumo, possam comprar energia elétrica de qualquer supridor a partir de janeiro de 2024.
+              </p>
+              <p className="text-lg mb-4 text-gray-700">
+                Com a abertura gradual do Mercado Livre de energia, um maior número de consumidores necessariamente estará habilitado para migração. Atualmente, 31,5% dos consumidores habilitados estão no ambiente livre, ou seja, 68,5% podem migrar e não migraram ainda.
+              </p>
+              <p className="text-lg mb-4 text-gray-700">
+                O mercado potencial de atuação é de 202 mil unidades consumidoras em todo o Brasil, o que equivale a um volume de aproximadamente 2.6 GW. Como já ocorre em outros países, a tendência é de que no Brasil a abertura total do ACL se dê em 2028 para todos os consumidores, incluindo os residenciais.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
