@@ -2,16 +2,16 @@ import { Header } from "@/components/Header"
 import "./globals.css"
 import Script from "next/script"
 import Footer from "@/components/Footer"
-export const metadata = {
+ export const metadata = {
   title: "Grupo Conexão",
   description: "Conectando Oportunidades, Gerando Resultados",
 }
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode
-}) {
+}>) {
   return (
     <html lang="pt-BR">
       <body className={"font-primary"}>
