@@ -18,7 +18,7 @@ const Credito: React.FC = () => {
   const sectionRefs = useRef<(HTMLElement | null)[]>([]);
   const form1Ref = useRef<HTMLFormElement>(null);
   const form2Ref = useRef<HTMLFormElement>(null);
-  const { step, isSubmitting\ } = useFormStepper();
+  const { step, isSubmitting } = useFormStepper();
   
   useGsapAnimations(sectionRefs);
 
