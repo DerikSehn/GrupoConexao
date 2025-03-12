@@ -10,12 +10,12 @@ interface CNPJInputProps {
 const CNPJInput: React.FC<CNPJInputProps> = ({ id, name, required }) => {
   const [value, setValue] = useState('');
 
-  const validateCNPJ = (value: string) => {
+  const validateCNPJ = (value: string): boolean => {
     // Adicione a lógica de validação de CNPJ aqui
     return true;
   };
 
-  const formatCNPJ = (value: string) => {
+  const formatCNPJ = (value: string): string => {
     return value
       .replace(/\D/g, '')
       .replace(/^(\d{2})(\d)/, '$1.$2')
