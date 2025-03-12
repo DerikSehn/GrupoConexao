@@ -15,12 +15,20 @@ import React, { useRef } from 'react';
 gsap.registerPlugin(ScrollTrigger);
 
 const Credito: React.FC = () => {
-  const sectionRefs = useRef<(HTMLElement | null)[]>([]);
+  // Criar refs individuais para cada seção
+  const heroSectionRef = useRef<HTMLElement>(null);
+  const section1Ref = useRef<HTMLElement>(null);
+  const section2Ref = useRef<HTMLElement>(null);
+  
+  // Array de refs para animações
+  const allSectionRefs = [heroSectionRef, section1Ref, section2Ref];
+  
   const form1Ref = useRef<HTMLFormElement>(null);
   const form2Ref = useRef<HTMLFormElement>(null);
   const { step, isSubmitting } = useFormStepper();
   
-  useGsapAnimations(sectionRefs);
+  // Usar os refs individuais para animações
+  useGsapAnimations({ current: allSectionRefs });
 
   useFormAutoFill(form1Ref)
   useFormAutoFill(form2Ref)
@@ -31,12 +39,12 @@ const Credito: React.FC = () => {
       imageSrc="/images/products/credito-imobiliario.jpg"   
       title="Crédito e Benefícios" 
       description="Preencha o formulário abaixo para solicitar crédito ou assessoria de benefícios."
-       sectionRef={sectionRefs.current[0]} />
+      sectionRef={heroSectionRef} />
 
       {step === 1 && (
-        <section ref={(el) => {sectionRefs.current[1] = el}} className="py-12 px-4 bg-gray-200 relative">
+        <section ref={section1Ref} className="py-12 px-4 bg-gray-200 relative">
           <div className="container mx-auto bg-white p-8 rounded-lg shadow-lg">
-            <h2 className="text-3xl font-bold mb-2 text-center text-primary bg-white/50 backdrop-blur-md  p-4 sticky top-0">Diagnóstico Empresarial - 1ª Sessão</h2>
+            <h2 className="text-3xl font-bold mb-2 text-center text-primary bg-white/50 backdrop-blur-md p-4 sticky top-0">Diagnóstico Empresarial - 1ª Sessão</h2>
             <form ref={form1Ref} onSubmit={sendToBusinnessMail()} className="space-y-4 mx-auto max-w-prose">
               <div>
                 <label htmlFor="recomendante" className="block text-sm font-medium text-gray-700">Nome do Recomendante</label>
@@ -166,7 +174,7 @@ const Credito: React.FC = () => {
       )}
 
       {step === 2 && (
-        <section ref={(el) => {sectionRefs.current[2] = el}} className="py-12 px-4 bg-gray-200">
+        <section ref={section2Ref} className="py-12 px-4 bg-gray-200">
           <div className="container mx-auto">
             <h2 className="text-3xl font-bold mb-6 text-center text-primary">Diagnóstico Empresarial - 2ª Sessão</h2>
             <form ref={form2Ref} onSubmit={sendToBusinnessMail()} className="space-y-4">
