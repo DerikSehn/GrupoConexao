@@ -5,20 +5,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { banks } from '@/data/banks';
+import HeroSection from '@/components/hero/HeroSection';
 
 
 const Consorcios: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-100 pt-20">
-      <section className="relative py-12 px-4 text-white bg-black">
-        <Image src="/images/products/consorcios.jpg" alt="Consórcios" layout="fill" objectFit="cover" className="blur-sm z-0 brightness-50" />
-        <div className="relative z-10 container mx-auto text-center justify-center  min-h-[500px] content-center">
-          <h1 className="text-4xl font-bold mb-4">Consórcios</h1>
-          <p className="text-xl mb-8 max-w-prose mx-auto font-secondary">
-            Nossos consórcios oferecem uma forma inteligente e planejada de adquirir bens e serviços, com condições especiais e flexibilidade.
-          </p>
-        </div>
-      </section>
+      <HeroSection
+        imageSrc="/images/products/consorcios.jpg"
+        title="Consórcios"
+        description="Adquira seu bem sem pagar juros abusivos. Conheça nossas opções de consórcio e faça uma simulação."
+        
+      />
       <section className="py-12 px-4 bg-gray-200">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-6 text-center text-primary">Como Funciona</h2>
@@ -36,10 +34,12 @@ const Consorcios: React.FC = () => {
             </div>
             <div className="relative">
               <Image
-                src="/images/consorcio-car.jpg"
+                src="/images/products/consorcios.jpg"
                 alt="Consórcio de Carro"
-                layout="fill"
-                objectFit="cover"
+                layout="responsive"
+                width={800}
+                height={500}
+                objectFit="contain"
                 className="rounded-lg shadow-lg"
               />
             </div>

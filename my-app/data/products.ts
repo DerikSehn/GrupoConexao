@@ -83,6 +83,10 @@ export const products = [
     id: "credito-consignado",
     name: "Crédito Consignado Público e Privado",
     href: "#credito-consignado",
+    button: {
+        title: "Ver mais",
+        href: '/credito'
+    },
     image: '/images/products/consignado-publico-privado.jpg',
     title: "Crédito Consignado Público e Privado",
     description: "Oferecemos as melhores condições de crédito consignado, com taxas atrativas e processo simplificado para servidores públicos e trabalhadores do setor privado.",

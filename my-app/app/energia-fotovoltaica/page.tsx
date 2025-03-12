@@ -1,5 +1,6 @@
 "use client"
 import ContactSection from '@/components/ContactSection';
+import HeroSection from '@/components/hero/HeroSection';
 import { Button } from '@/components/ui/button';
 import { Chart, registerables } from 'chart.js';
 import { gsap } from 'gsap';
@@ -92,18 +93,15 @@ const EnergiaFotovoltaica: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 pt-20">
-      <section ref={(el) => {sectionRefs.current[0] = el}} className="relative py-12 px-4 text-white bg-black">
-        <Image src="/images/products/energia.jpg" alt="Energia Fotovoltaica" layout="fill" objectFit="cover" className="blur-sm z-0 brightness-50" />
-        <div className="relative z-10 container mx-auto text-center justify-center min-h-[500px] content-center">
-          <h1 className="text-4xl font-bold mb-4">Energia Fotovoltaica</h1>
-          <p className="text-xl mb-8 max-w-prose mx-auto font-secondary">
-            Oferecemos soluções de energia fotovoltaica com aquisição imediata e sem custo algum para o contratante, promovendo sustentabilidade e economia.
-          </p>
-        </div>
-      </section>
+     <HeroSection
+      sectionRef={sectionRefs.current[0] }
+     imageSrc="/images/products/energia.jpg" title="Energia Fotovoltaica" description="Oferecemos soluções de energia fotovoltaica com aquisição imediata e sem custo algum para o contratante, promovendo sustentabilidade e economia." />
+      
 
-      <section ref={(el) => {sectionRefs.current[1] = el}} className="relative py-12 bg-black min-h-[600px] flex flex-col justify-center">
-        <Image src="/images/products/capital-giro.jpg" alt="Background" layout="fill" objectFit="cover" className="blur-sm z-0 brightness-50" />
+  <section ref={(el) => {sectionRefs.current[1] = el}} className="relative py-12 bg-black min-h-[600px] flex flex-col justify-center">
+    <Image src="/images/products/capital-giro.jpg" alt="Background" layout="fill" objectFit="cover" className="blur-sm z-0 brightness-50" />
+    <span className="absolute inset-0 bg-gradient-to-t from-gray-200  z-[10]"/>
+
         <div className="relative z-10 container mx-auto max-w-prose text-center bg-gray-100 rounded-[42px] px-0">
           <div className="p-4 lg:p-12 ">
           <h2 className="text-3xl font-bold mb-6 text-primary">Em que faixa de valor está a sua conta de luz atualmente?</h2>
