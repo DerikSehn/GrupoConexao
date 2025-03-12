@@ -13,13 +13,21 @@ gsap.registerPlugin(ScrollTrigger);
 Chart.register(...registerables);
 
 const EnergiaFotovoltaica: React.FC = () => {
-  const sectionRefs = useRef<(HTMLElement | null)[]>([]);
+  // Create individual refs for each section
+  const heroSectionRef = useRef<HTMLElement>(null);
+  const formSectionRef = useRef<HTMLElement>(null);
+  const marketSectionRef = useRef<HTMLElement>(null);
+  const growthSectionRef = useRef<HTMLElement>(null);
+  const distributionSectionRef = useRef<HTMLElement>(null);
+  
+  // Store all refs in an array for animation
+  const allSectionRefs = [heroSectionRef, formSectionRef, marketSectionRef, growthSectionRef, distributionSectionRef];
   const [rangeValue, setRangeValue] = useState(100);
 
   useEffect(() => {
-    sectionRefs.current.forEach((section) => {
-      if (section) {
-        gsap.fromTo(section, 
+    allSectionRefs.forEach((ref) => {
+      if (ref.current) {
+        gsap.fromTo(ref.current, 
           { opacity: 0, y: 50 }, 
           { 
             opacity: 1, 
@@ -27,7 +35,7 @@ const EnergiaFotovoltaica: React.FC = () => {
             duration: 1, 
             ease: "power3.out",
             scrollTrigger: {
-              trigger: section,
+              trigger: ref.current,
               start: "top 80%",
               end: "bottom 20%",
               toggleActions: "play none none reverse",
@@ -94,11 +102,13 @@ const EnergiaFotovoltaica: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-100 pt-20">
      <HeroSection
-      sectionRef={sectionRefs.current[0] }
-     imageSrc="/images/products/energia.jpg" title="Energia Fotovoltaica" description="Oferecemos soluções de energia fotovoltaica com aquisição imediata e sem custo algum para o contratante, promovendo sustentabilidade e economia." />
+      sectionRef={heroSectionRef}
+      imageSrc="/images/products/energia.jpg" 
+      title="Energia Fotovoltaica" 
+      description="Oferecemos soluções de energia fotovoltaica com aquisição imediata e sem custo algum para o contratante, promovendo sustentabilidade e economia." 
+     />
       
-
-  <section ref={(el) => {sectionRefs.current[1] = el}} className="relative py-12 bg-black min-h-[600px] flex flex-col justify-center">
+  <section ref={formSectionRef} className="relative py-12 bg-black min-h-[600px] flex flex-col justify-center">
     <Image src="/images/products/capital-giro.jpg" alt="Background" layout="fill" objectFit="cover" className="blur-sm z-0 brightness-50" />
     <span className="absolute inset-0 bg-gradient-to-t from-gray-200  z-[10]"/>
 
@@ -137,7 +147,7 @@ const EnergiaFotovoltaica: React.FC = () => {
         </div>
       </section>
 
-      <section ref={(el) => {sectionRefs.current[2] = el}} className="py-12 px-4 bg-gray-200">
+      <section ref={marketSectionRef} className="py-12 px-4 bg-gray-200">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-6 text-center text-primary">Visão Geral do Mercado</h2>
           <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -159,7 +169,7 @@ const EnergiaFotovoltaica: React.FC = () => {
         </div>
       </section>
 
-      <section ref={(el) => {sectionRefs.current[3] = el}} className="py-12 px-4 bg-gray-200">
+      <section ref={growthSectionRef} className="py-12 px-4 bg-gray-200">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-6 text-center text-primary">Crescimento do Mercado</h2>
           <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -181,7 +191,7 @@ const EnergiaFotovoltaica: React.FC = () => {
         </div>
       </section>
 
-      <section ref={(el) => {sectionRefs.current[4] = el}} className="py-12 px-4 bg-gray-200">
+      <section ref={distributionSectionRef} className="py-12 px-4 bg-gray-200">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-6 text-center text-primary">Distribuição de Energia</h2>
           <div className="grid md:grid-cols-2 gap-8 items-center">

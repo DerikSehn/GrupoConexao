@@ -49,9 +49,8 @@ const ContactSection: React.FC = () => {
             <TeamMemberCard key={index} member={member} />
           ))}
         </Slider>
-        
       </div>
-        <ContactForm />
+      <ContactForm />
     </section>
   );
 };
