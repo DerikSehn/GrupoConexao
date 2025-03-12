@@ -18,7 +18,7 @@ const Credito: React.FC = () => {
   const sectionRefs = useRef<(HTMLElement | null)[]>([]);
   const form1Ref = useRef<HTMLFormElement>(null);
   const form2Ref = useRef<HTMLFormElement>(null);
-  const { step, isSubmitting } = useFormStepper();
+  const { step, isSubmitting\ } = useFormStepper();
   
   useGsapAnimations(sectionRefs);
 
@@ -28,10 +28,10 @@ const Credito: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-100 pt-20">
       <HeroSection 
-      imageSrc="/images/products/credito-imobiliario.jpg" 
+      imageSrc="/images/products/credito-imobiliario.jpg"   
       title="Crédito e Benefícios" 
       description="Preencha o formulário abaixo para solicitar crédito ou assessoria de benefícios."
-       sectionRef={sectionRefs.current[0] as any} />
+       sectionRef={sectionRefs.current[0]} />
 
       {step === 1 && (
         <section ref={(el) => {sectionRefs.current[1] = el}} className="py-12 px-4 bg-gray-200 relative">
