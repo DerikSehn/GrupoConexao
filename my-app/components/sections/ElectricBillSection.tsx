@@ -54,6 +54,11 @@ export default function ElectricBillSection( ) {
           <Button onClick={handleWhatsAppLink} className="bg-primary hover:bg-primary/90 text-white text-lg px-8 py-3 w-full h-20 rounded-b-[42px]">
             Enviar
           </Button>
+          <p className="text-sm text-center mt-2">
+            <a href="/privacy-policy" className="text-blue-500 hover:underline">
+              Leia nossa política de privacidade
+            </a>
+          </p>
         </div>
       </motion.section>)
 }
