@@ -22,7 +22,7 @@ export function Header() {
   const [isVisible, setIsVisible] = React.useState(true)
   const [lastScrollY, setLastScrollY] = React.useState(0)
 
-  const handleScroll = () => {
+  const handleScroll = React.useCallback(() => {
     if (typeof window !== 'undefined') {
       if (window.scrollY < lastScrollY || window.scrollY === 0) {
         setIsVisible(true)
@@ -31,7 +31,7 @@ export function Header() {
       }
       setLastScrollY(window.scrollY)
     }
-  }
+  }, [lastScrollY])
 
   React.useEffect(() => {
     if (typeof window !== 'undefined') {

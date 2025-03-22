@@ -76,7 +76,7 @@ const steps = [
 const BusinnessDiagnosticForm: React.FC = () => {
   const { step, nextStep, Stepper } = useFormStepper(steps);
   const formRef = useRef<HTMLFormElement>(null);
-  async function handleSubmit(data: Record<string, unknown>) {
+  async function handleSubmit() { // removed 'data' parameter
      if (step < steps.length) {
       nextStep();
     } else  
