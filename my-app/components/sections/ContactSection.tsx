@@ -4,9 +4,9 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import TeamMemberCard from './TeamMemberCard';
-import { teamMembers } from '../data/teamMembers';
-import ContactForm from './ContactForm';
+import TeamMemberCard from '../cards/TeamMemberCard';
+import { teamMembers } from '../../data/teamMembers';
+import ContactForm from '../form/ContactForm';
 
 const ContactSection: React.FC = () => {
   const settings = {

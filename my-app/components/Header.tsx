@@ -1,24 +1,26 @@
 "use client"
-import { useState, useEffect } from "react"
+
+import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-
-const products = [
-  { name: "Crédito Imobiliário", href: "/#credito-imobiliario" },
-  { name: "Construção Civil", href: "/#construcao-civil" },
-  { name: "Consórcios", href: "/#consorcios" },
-  { name: "Plano de Benefícios", href: "/#plano-beneficios" },
-  { name: "Seguros", href: "/#seguros" },
-  { name: "Crédito Consignado", href: "/#credito-consignado" },
-  { name: "Veículos", href: "/#veiculos" },
-]
+import { products } from "@/data/products"
+import { cn } from "@/lib/utils"
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu"
 
 export function Header() {
-  const [isVisible, setIsVisible] = useState(true)
-  const [lastScrollY, setLastScrollY] = useState(0)
+  const [isVisible, setIsVisible] = React.useState(true)
+  const [lastScrollY, setLastScrollY] = React.useState(0)
 
   const handleScroll = () => {
     if (typeof window !== 'undefined') {
@@ -31,7 +33,7 @@ export function Header() {
     }
   }
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (typeof window !== 'undefined') {
       window.addEventListener('scroll', handleScroll)
       return () => {
@@ -41,8 +43,12 @@ export function Header() {
   }, [lastScrollY])
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 bg-black text-white transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+    //  inner rounded curve effect at bottom right
+    <header className={`fixed top-0 left-0 right-0 z-50 bg-black text-white transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
+    
+    >
+      <div className="container mx-auto px-4 py-4 flex justify-between items-center "
+        >
         <Link href="/" className="flex items-center bg-black py-3 -mb-6 px-4 -mx-4 rounded-b-lg hover:animate-pulse">
           <Image
             src="/logo.png"
@@ -52,17 +58,38 @@ export function Header() {
             className="h-12 w-auto"
           />
         </Link>
-        <nav className="hidden md:flex space-x-4">
-          {products.map((product) => (
-            <Link
-              key={product.name}
-              href={product.href}
-              className="text-white hover:text-orange-400 transition-colors"
-            >
-              {product.name}
-            </Link>
-          ))}
-        </nav>
+        <NavigationMenu className="hidden md:flex">
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger className={navigationMenuTriggerStyle()}>
+                Serviços
+              </NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid gap-3 p-4 md:w-[400px] lg:grid-cols-2">
+                  {products.map((product) => (
+                    <ListItem
+                      key={product.name}
+                      title={product.name}
+                      href={ product.button?.href ?? product.href}
+                      className=""
+                    >
+                      <p>
+                      {product.description}
+                      </p>
+                    </ListItem>
+                  ))}
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link href="/#contact" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Contato
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
         {/* Botão Fale Conosco para computadores */}
         <Link
           href="#contact"
@@ -94,3 +121,35 @@ export function Header() {
     </header>
   )
 }
+
+const ListItem = React.forwardRef<
+  React.ElementRef<"a">,
+  React.ComponentPropsWithoutRef<"a">
+>(({ className, title, href, children, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <Link
+          href={href!}
+          legacyBehavior
+          passHref
+        >
+          <a
+            ref={ref}
+            className={cn(
+              "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors group hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+              className
+            )}
+            {...props}
+          >
+            <h3 className="text-sm font-medium leading-none text-white group-hover:text-black group-focus:text-black">{title}</h3>
+            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+              {children}
+            </p>
+          </a>
+        </Link>
+      </NavigationMenuLink>
+    </li>
+  )
+})
+ListItem.displayName = "ListItem"

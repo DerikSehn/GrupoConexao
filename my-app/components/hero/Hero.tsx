@@ -2,12 +2,12 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import WaveTransition from "@/components/WaveTransition"
-import { handleScrollToSection as handleClick } from "@/lib/scroll"
+ import { handleScrollToSection as handleClick } from "@/lib/scroll"
 import gsap from "gsap"
 import { ArrowRight, Shield, TrendingUp, Users, Zap } from "lucide-react"
 import { useEffect, useRef } from "react"
-
+import SectionTransition from "../design/SectionTransition"
+ 
 const features = [
   { icon: Users, title: "Leads Qualificados", description: "Clientes prontos para comprar" },
   { icon: TrendingUp, title: "Alta Conversão", description: "Resultados comprovados" },
@@ -91,7 +91,7 @@ export function Hero() {
         </div>
       </div>
     </section>
-      <WaveTransition />
+      <SectionTransition />
   </div>
   )
 }

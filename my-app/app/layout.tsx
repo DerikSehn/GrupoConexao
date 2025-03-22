@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={"font-primary"}>
+      <body className={"font-primary bg-black"}>
         <Header />
         {children}
         <Footer/>

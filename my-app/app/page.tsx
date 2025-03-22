@@ -1,9 +1,7 @@
 "use client";
 import WhatsappButton from "@/components/button/WhatsappButton";
-import ContactSection from "@/components/ContactSection";
-import { Hero } from "@/components/hero/Hero";
-import ProductCard from "@/components/ProductCard";
-import { ProductSection } from "@/components/ProductSection";
+import ContactSection from "@/components/sections/ContactSection";
+import { Hero } from "@/components/hero/Hero"; 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { products } from "@/data/products";
@@ -12,8 +10,10 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CheckCircle, Instagram } from "lucide-react";
 import { useEffect } from "react";
-import TextParallax from "@/components/TextParallax";
+import TextParallax from "@/components/design/TextParallax";
 import { partners } from "@/data/partners";
+import ProductCard from "@/components/cards/ProductCard";
+import { ProductSection } from "@/components/sections/ProductSection";
 
 gsap.registerPlugin(ScrollTrigger)
 

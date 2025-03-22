@@ -1,9 +1,24 @@
-export const products = [
+export interface Product {
+  index: number;
+  id: string;
+  name: string;
+  href: string;
+  image: string;
+  title: string;
+  description: string;
+  features: string[];
+  button?: {
+    title: string;
+    href: string;
+  };
+}
+
+export const products: Product[] = [
   {
     index: 0,
     id: "credito-imobiliario",
     name: "Crédito Imobiliário",
-    href: "#credito-imobiliario",
+    href: "/#credito-imobiliario",
     image: '/images/products/credito-imobiliario.jpg',
     title: "Crédito Imobiliário",
     description: "Facilitamos o acesso ao crédito imobiliário, conectando você às melhores oportunidades para realizar o sonho da casa própria.",
@@ -18,7 +33,7 @@ export const products = [
     index: 1,
     id: "construcao-civil",
     name: "Construção Civil",
-    href: "#construcao-civil",
+    href: "/#construcao-civil",
     image: '/images/products/construcao-civil.jpg',
     title: "Construção Civil",
     description: "Oferecemos soluções completas para o setor de construção civil, conectando empresas a clientes qualificados e prontos para investir.",
@@ -33,7 +48,7 @@ export const products = [
     index: 2,
     id: "consorcios",
     name: "Consórcios",
-    href: "#consorcios",
+    href: "/#consorcios",
     button: {
         title: "Ver mais",
         href: '/consorcios'
@@ -52,7 +67,7 @@ export const products = [
     index: 3,
     id: "plano-beneficios",
     name: "Plano de Benefícios (Saúde)",
-    href: "#plano-beneficios",
+    href: "/#plano-beneficios",
     image: '/images/products/plano-beneficios.jpg',
     title: "Plano de Benefícios (Saúde)",
     description: "Cuidamos da saúde e bem-estar dos seus colaboradores com planos de benefícios abrangentes e personalizados.",
@@ -67,7 +82,7 @@ export const products = [
     index: 4,
     id: "seguros",
     name: "Seguros",
-    href: "#seguros",
+    href: "/#seguros",
     image: '/images/products/seguros.jpg',
     title: "Seguros",
     description: "Proteja o que é importante para você com nossas soluções em seguros, oferecendo tranquilidade e segurança para sua vida e seus bens.",
@@ -80,28 +95,9 @@ export const products = [
   },
   {
     index: 5,
-    id: "credito-consignado",
-    name: "Crédito Consignado Público e Privado",
-    href: "#credito-consignado",
-    button: {
-        title: "Ver mais",
-        href: '/credito'
-    },
-    image: '/images/products/consignado-publico-privado.jpg',
-    title: "Crédito Consignado Público e Privado",
-    description: "Oferecemos as melhores condições de crédito consignado, com taxas atrativas e processo simplificado para servidores públicos e trabalhadores do setor privado.",
-    features: [
-      "Taxas de juros reduzidas",
-      "Prazos estendidos para pagamento",
-      "Desconto em folha de pagamento",
-      "Atendimento personalizado e análise rápida"
-    ]
-  },
-  {
-    index: 6,
     id: "veiculos",
     name: "Veículos",
-    href: "#veiculos",
+    href: "/#veiculos",
     image: '/images/products/veiculos.webp',
     title: "Veículos",
     description: "Facilitamos a aquisição do seu veículo novo ou seminovo, conectando você às melhores oportunidades do mercado automotivo.",
@@ -113,10 +109,10 @@ export const products = [
     ]
   },
   {
-    index: 7,
+    index: 6,
     id: "energia-fotovoltaica",
     name: "Energia Fotovoltaica",
-    href: "#energia-imediata",
+    href: "/#energia-imediata",
     button: {
         title: "Ver mais",
         href: '/energia-fotovoltaica'
@@ -134,5 +130,42 @@ export const products = [
       "Expansão para novos setores de negócios",
       "Tecnologia de ponta para otimização de custos"
     ]
-  }
+  },
+  // pessoa juridica
+  {
+    index: 7,
+    id: "pessoa-juridica",
+    name: "Pessoa Jurídica",
+    href: "/#pessoa-juridica",
+    button: {
+        title: "Ver mais",
+        href: '/pessoa-juridica'
+    },
+    image: '/images/products/pessoa-juridica.jpg',
+    title: "Soluções para Pessoa Jurídica",
+    description: "Oferecemos soluções financeiras completas para empresas de todos os portes, incluindo cartão corporativo, financiamento empresarial e consultoria personalizada.",
+    features: [
+      "Cartão corporativo sem anuidade",
+      "Limite flexível que se adapta ao seu negócio",
+      "Gestão financeira centralizada e em tempo real",
+      "Consultoria empresarial personalizada",
+      "Acesso a linhas de crédito exclusivas",
+      "Integração com sistemas de gestão corporativa"
+    ]
+  },
+  {
+    index: 8,
+    id: "credito-consignado",
+    name: "Crédito Consignado Público e Privado",
+    href: "#credito-consignado",
+    image: '/images/products/consignado-publico-privado.jpg',
+    title: "Crédito Consignado Público e Privado",
+    description: "Oferecemos as melhores condições de crédito consignado, com taxas atrativas e processo simplificado para servidores públicos e trabalhadores do setor privado.",
+    features: [
+      "Taxas de juros reduzidas",
+      "Prazos estendidos para pagamento",
+      "Desconto em folha de pagamento",
+      "Atendimento personalizado e análise rápida"
+    ]
+  },
 ];

@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { CardContent } from "./ui/card";
-import Link from "next/link";
+ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
+import { CardContent } from "../ui/card";
 
 interface ProductCardProps {
     product: {

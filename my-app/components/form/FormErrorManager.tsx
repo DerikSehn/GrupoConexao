@@ -5,7 +5,7 @@ interface FormErrorManagerProps {
 }
 
 const FormErrorManager: React.FC<FormErrorManagerProps> = ({ error }) => {
-   return (
+  return (
     <div className="text-red-500">
       <p>{error}</p>
     </div>

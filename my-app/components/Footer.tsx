@@ -9,6 +9,7 @@ export default function Footer() {
               <p className="text-lg font-bold">Grupo Conexão</p>
               <p>© {new Date().getFullYear().toString()} Todos os direitos reservados.</p>
               <p>Desenvolvido por <Link href="https://api.whatsapp.com/send?phone=5551999300707&text=Ol%C3%A1" target="_blank" rel="noopener noreferrer" className="underline">Dérik Sehn</Link></p>
+              <Link href="/privacy-policy" className="underline">Política de Privacidade</Link>
             </div>
             <div className="flex flex-col items-center md:items-start">
               <p className="text-lg font-bold">Informações</p>
@@ -21,17 +22,7 @@ export default function Footer() {
                 <li>Aprimorar o modelo regulatório e comercial do setor elétrico.</li>
               </ul>
             </div>
-            <div className="flex flex-col items-center md:items-start">
-              <p className="text-lg font-bold">Principais pontos</p>
-              <ul className="list-disc list-inside">
-                <li>Separar a energia do lastro no setor elétrico.</li>
-                <li>Permitir que imóveis residenciais e pequenos negócios migrem para o mercado livre.</li>
-                <li>Baratear a conta de luz.</li>
-                <li>Permitir a portabilidade da conta de luz ao mudar de setor elétrico.</li>
-              </ul>
-              <p>Considerações:</p>
-              <p>O PLP 414/2021 é o antigo PLS 232/2016. O Instituto Brasileiro de Defesa do Consumidor, (Idec)</p>
-            </div>
+           
           </div>
         </footer>
     )

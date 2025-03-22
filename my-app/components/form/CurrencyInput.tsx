@@ -8,7 +8,7 @@ interface CurrencyInputProps {
 }
 
 const CurrencyInput: React.FC<CurrencyInputProps> = ({ id, name, required }) => {
-  const formatCurrency = (value: string) => {
+  const formatCurrency = (value: string): string => {
     return value
       .replace(/\D/g, '')
       .replace(/(\d)(\d{2})$/, '$1,$2')

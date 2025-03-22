@@ -8,7 +8,7 @@ interface PhoneInputProps {
 }
 
 const PhoneInput: React.FC<PhoneInputProps> = ({ id, name, required }) => {
-  const formatPhone = (value: string) => {
+  const formatPhone = (value: string): string => {
     return value
       .replace(/\D/g, '')
       .replace(/(\d{2})(\d)/, '($1) $2')

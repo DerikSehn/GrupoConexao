@@ -8,7 +8,7 @@ interface WebsiteInputProps {
 }
 
 const WebsiteInput: React.FC<WebsiteInputProps> = ({ id, name, required }) => {
-  const validateWebsite = (value: string) => {
+  const validateWebsite = (value: string): boolean => {
     const regex = /^(https?:\/\/)?([\w-]+(\.[\w-]+)+)(\/[\w-]*)*$/;
     return regex.test(value);
   };

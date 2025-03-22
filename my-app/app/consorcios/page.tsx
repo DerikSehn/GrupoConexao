@@ -1,5 +1,5 @@
 "use client"
-import ContactSection from '@/components/ContactSection';
+import ContactSection from '@/components/sections/ContactSection';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import Link from 'next/link';

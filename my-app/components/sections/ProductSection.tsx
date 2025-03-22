@@ -5,8 +5,8 @@ import { Card, CardContent } from "@/components/ui/card"
 import { ArrowRight, CheckCircle } from "lucide-react"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
-import { Button } from "./ui/button"
-
+import { Button } from "../ui/button"
+ 
 type ButtonProps = {
   title?: string;
   href: string;
@@ -16,7 +16,7 @@ interface ProductSectionProps {
   id: string;
   title: string;
   description: string;
-  features: string[];
+  features?: string[];
   button?: ButtonProps;
   index: number;
 }
@@ -58,8 +58,9 @@ export function ProductSection({ id, title, description, features, button, index
       <div className={`container mx-auto relative rounded-xl lg:min-h-[600px] py-8 lg:py-0 content-center ${ isEven ? "bg-black" : "bg-transparent"}`}>
     <h2 className="text-4xl lg:text-6xl font-thin  mb-6 text-center text-primary even:text-white">{title}</h2>
         <p className={`text-lg mb-8 text-center max-w-3xl mx-auto ${isEven ? 'text-gray-400' : 'text-gray-800'}`}>{description}</p>
+        {features &&
         <div className="grid md:grid-cols-2 gap-6 max-w-prose mx-auto">
-          {features.map((feature, id) => (
+          {features?.map((feature, id) => (
             <Card key={id} className=" bg-primary/5  border-primary/5 hover:border-secondary transition-colors product-card">
               <CardContent className={`p-6 flex items-start ${isEven ? 'text-gray-400' : 'text-gray-800'} `}>
                 <CheckCircle className="h-6 w-6  mr-4 flex-shrink-0 mt-1" />
@@ -68,12 +69,13 @@ export function ProductSection({ id, title, description, features, button, index
             </Card>
           ))}
         </div>
+        }
         {button &&
 
       <div className="flex justify-center p-6">
       <Link href={button.href} className="text-white hover:text-gray-300 text-lg group ">
         <Button className="bg-primary hover:bg-primary/90 text-white text-lg p-8 flex items-center ">
-          { button.title || "Saiba mais"} <ArrowRight className="ml-2 scale-[2] group-hover:translate-x-2 duration-400 transition-transform" />
+          { button.title ?? "Saiba mais"} <ArrowRight className="ml-2 scale-[2] group-hover:translate-x-2 duration-400 transition-transform" />
         </Button>
       </Link> 
     </div>
