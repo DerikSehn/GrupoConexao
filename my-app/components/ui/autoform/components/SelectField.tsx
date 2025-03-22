@@ -14,7 +14,7 @@ export const SelectField: React.FC<AutoFormFieldProps> = ({
   error,
   id,
 }) => {
-  const { key, ...props } = inputProps;
+  const { ...props } = inputProps;
 
   return (
     <Select

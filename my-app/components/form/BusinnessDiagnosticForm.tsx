@@ -3,7 +3,7 @@ import { products } from '@/data/products';
 import { useFormStepper } from '@/hooks/useFormStepper';
 import { sendToBusinnessMailDirect } from '@/modules/formMailHandler';
 import { ZodProvider } from "@autoform/zod";
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { z } from "zod";
 import FormSection from '../sections/FormSection';
 import { AutoForm } from '../ui/autoform';
@@ -76,7 +76,7 @@ const steps = [
 const BusinnessDiagnosticForm: React.FC = () => {
   const { step, nextStep, Stepper } = useFormStepper(steps);
   const formRef = useRef<HTMLFormElement>(null);
-  async function handleSubmit(data: any) {
+  async function handleSubmit(data: Record<string, unknown>) {
      if (step < steps.length) {
       nextStep();
     } else  
@@ -95,6 +95,11 @@ const BusinnessDiagnosticForm: React.FC = () => {
             onSubmit={handleSubmit}
           >
             <SubmitButton>Próximo</SubmitButton>
+            <p className="text-sm text-center mt-2">
+              <a href="/privacy-policy" className="text-blue-500 hover:underline">
+                Leia nossa política de privacidade
+              </a>
+            </p>
           </AutoForm>
         )}
         {step === 2 && (
@@ -103,6 +108,11 @@ const BusinnessDiagnosticForm: React.FC = () => {
             onSubmit={handleSubmit}
           >
             <SubmitButton>Enviar</SubmitButton>
+            <p className="text-sm text-center mt-2">
+              <a href="/privacy-policy" className="text-blue-500 hover:underline">
+                Leia nossa política de privacidade
+              </a>
+            </p>
           </AutoForm>
         )}
         {step === 3 && (

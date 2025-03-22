@@ -7,7 +7,7 @@ export const DateField: React.FC<AutoFormFieldProps> = ({
   error,
   id,
 }) => {
-  const { key, ...props } = inputProps;
+  const { ...props } = inputProps;
 
   return (
     <Input

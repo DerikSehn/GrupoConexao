@@ -10,3 +10,5 @@ export const Form = React.forwardRef<
     </form>
   );
 });
+
+Form.displayName = "Form";

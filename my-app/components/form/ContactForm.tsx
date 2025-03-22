@@ -1,7 +1,6 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { sendToBusinnessMail } from "@/modules/formMailHandler"
@@ -35,6 +34,11 @@ export default function ContactForm() {
             <Button type="submit" className="w-full">
               Enviar
             </Button>
+            <p className="text-sm text-center mt-2">
+              <a href="/privacy-policy" className="text-blue-500 hover:underline">
+                Leia nossa política de privacidade
+              </a>
+            </p>
           </form>
     </FormSection>
   )
