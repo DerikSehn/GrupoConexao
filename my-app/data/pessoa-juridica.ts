@@ -13,7 +13,7 @@ export const pessoaJuridicaData = {
     },
     cta: {
       text: "Solicitar Cartão",
-      href: "#pessoa-juridica-form-section"
+      href: "#diagnostic-form"
     }
   },
   services: {
