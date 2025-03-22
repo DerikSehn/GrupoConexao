@@ -1,10 +1,9 @@
-import * as React from "react"
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu"
 import { cva } from "class-variance-authority"
 import { ChevronDown } from "lucide-react"
+import * as React from "react"
 
 import { cn } from "@/lib/utils"
-import Link from "next/link"
 
 const NavigationMenu = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Root>,
@@ -116,45 +115,7 @@ const NavigationMenuIndicator = React.forwardRef<
 NavigationMenuIndicator.displayName =
   NavigationMenuPrimitive.Indicator.displayName
 
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, href, children, ...props }, ref) => {
-  return (
-    <li className="transition-all duration-300 ease-in-out hover:scale-105 hover:bg-black">
-      <NavigationMenuLink asChild>
-        <Link
-          href={href!}
-          legacyBehavior
-          passHref
-        >
-          <a
-            ref={ref}
-            className={cn(
-              "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors group hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-              className
-            )}
-            {...props}
-          >
-            <h3 className="text-sm font-medium leading-none text-white group-hover:z-10">{title}</h3>
-            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground group-hover:max-w-prose group-hover:bg-black group-hover:text-white group-hover:p-4 group-hover:rounded-md">
-              {children}
-            </p>
-          </a>
-        </Link>
-      </NavigationMenuLink>
-    </li>
-  )
-})
-
 export {
-  navigationMenuTriggerStyle,
-  NavigationMenu,
-  NavigationMenuList,
-  NavigationMenuItem,
-  NavigationMenuContent,
-  NavigationMenuTrigger,
-  NavigationMenuLink,
-  NavigationMenuIndicator,
-  NavigationMenuViewport,
+  NavigationMenu, NavigationMenuContent, NavigationMenuIndicator, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle, NavigationMenuViewport
 }
+

@@ -40,7 +40,7 @@ export function Header() {
         window.removeEventListener('scroll', handleScroll)
       }
     }
-  }, [lastScrollY])
+  }, [handleScroll, lastScrollY])
 
   return (
     //  inner rounded curve effect at bottom right
