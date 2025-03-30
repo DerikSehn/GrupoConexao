@@ -1,8 +1,6 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
 
 interface CTAButtonProps {
   text: string;
@@ -50,7 +48,7 @@ const CTAButton: React.FC<CTAButtonProps> = ({
       case "primary":
       default:
         return (
-          <div data-button className=" border border-primary hover:scale-95 duration-300 relative group cursor-pointer text-white overflow-hidden h-14 w-64 rounded-md bg-primary p-2 flex justify-center items-center font-bold">
+          <div data-button className="border border-primary hover:scale-95 duration-300 relative group cursor-pointer text-white overflow-hidden h-14 w-64 rounded-md bg-primary p-2 flex justify-center items-center font-bold">
             <div className="absolute right-32 -top-4 group-hover:top-1 group-hover:right-2 z-0 w-40 h-40 rounded-full group-hover:scale-150 duration-500 bg-primary"></div>
             <div className="absolute right-2 -top-4 group-hover:top-1 group-hover:right-2 z-0 w-32 h-32 rounded-full group-hover:scale-150 duration-500 bg-primary/90"></div>
             <div className="absolute -right-12 top-4 group-hover:top-1 group-hover:right-2 z-0 w-24 h-24 rounded-full group-hover:scale-150 duration-500 bg-primary/80"></div>
@@ -61,23 +59,16 @@ const CTAButton: React.FC<CTAButtonProps> = ({
     }
   };
 
-  const navigateToLink = () => {
-    if (href) {
-      window.open(href, "_blank", "noopener,noreferrer");
-    }
-  }
-  // If href is provided, render button as a link
   if (href) {
     return (
-      <button className={cn(`inline-block`, className)} onClick={navigateToLink}>
+      <button className={`inline-block ${className}`} onClick={() => window.open(href, "_blank", "noopener,noreferrer")}>
         {buttonContent()}
       </button>
     );
   }
 
-  // Otherwise, render as a button
   return (
-    <button className={cn(`inline-block`, className)} onClick={onClick}>
+    <button className={`inline-block ${className}`} onClick={onClick}>
       {buttonContent()}
     </button>
   );
