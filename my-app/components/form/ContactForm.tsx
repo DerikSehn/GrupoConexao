@@ -5,14 +5,14 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { useRef } from "react"
 import FormSection from "@/components/sections/FormSection"
-import { sendToBusinnessMail } from "@/modules/emailHandler"
+import { sendToBusinessMail } from "@/modules/emailHandler"
 
 export default function ContactForm() {
   const form = useRef<HTMLFormElement>(null)
 
   return (
     <FormSection id="contact-form" title="Envie uma mensagem">
-          <form ref={form} onSubmit={sendToBusinnessMail()} className="space-y-4">
+          <form ref={form} onSubmit={sendToBusinessMail()} className="space-y-4">
             <div>
               <label htmlFor="from_name" className="block text-sm font-medium text-gray-700">
                 Nome

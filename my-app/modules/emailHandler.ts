@@ -4,7 +4,7 @@ const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
 const defaultTemplateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
 const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_API_KEY!;
 
-export const sendToBusinnessMail = (templateID: string = defaultTemplateID) => (
+export const sendToBusinessMail = (templateID: string = defaultTemplateID) => (
   e: React.FormEvent<HTMLFormElement>
 ) => {
   e.preventDefault();

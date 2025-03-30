@@ -1,6 +1,6 @@
 "use client";
 
-import BusinnessDiagnosticForm from "@/components/form/BusinnessDiagnosticForm";
+import BusinessDiagnosticForm from "@/components/form/BusinessDiagnosticForm";
 import HeroSectionEnhanced from "@/components/hero/HeroSectionEnhanced";
 import BenefitsSection from "@/components/sections/BenefitsSection";
 import { pessoaJuridicaData } from "@/data/pessoa-juridica";
@@ -13,7 +13,7 @@ const PessoaJuridicaPage: React.FC = () => {
       </span>
       <BenefitsSection data={pessoaJuridicaData.services} />
     {/*<FintechPartnershipsSection data={pessoaJuridicaData.fintechPartnerships} /> */}
-      <BusinnessDiagnosticForm />
+      <BusinessDiagnosticForm />
     </>
   );
 };

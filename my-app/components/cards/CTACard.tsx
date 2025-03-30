@@ -6,7 +6,7 @@ type Card = {
   content: string | React.ReactNode;
 };
 
-export default function CTACard({ content, title, className }: Card) {
+export default function CTACard({ content, title, className }: Readonly<Card>) {
 
   return (
     <div className={cn("bg-black/50 border-l-4 border-primary p-6  shadow-sm shadow-primary   backdrop-blur-sm bg-opacity-95 hover:bg-primary-300/10", className)}>
