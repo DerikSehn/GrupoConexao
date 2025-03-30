@@ -3,9 +3,9 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { sendToBusinnessMail } from "@/modules/formMailHandler"
 import { useRef } from "react"
 import FormSection from "@/components/sections/FormSection"
+import { sendToBusinnessMail } from "@/modules/emailHandler"
 
 export default function ContactForm() {
   const form = useRef<HTMLFormElement>(null)

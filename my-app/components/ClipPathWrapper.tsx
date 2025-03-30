@@ -8,7 +8,7 @@ interface ClipPathWrapperProps {
   className?: string;
 }
 
-export default function ClipPathWrapper({ id, filterId, children, className  }: ClipPathWrapperProps) {
+export default function ClipPathWrapper({ id, filterId, children, className  }: Readonly<ClipPathWrapperProps>) {
   return (
     <div
         className={cn( "absolute overflow-hidden", className)}

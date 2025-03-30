@@ -7,7 +7,7 @@ interface FormSectionProps {
   title: string;
 }
 
-export default function FormSection({ children, id, title }: FormSectionProps) {
+export default function FormSection({ children, id, title }: Readonly<FormSectionProps>) {
   return (
     <section id={id} className='relative w-full mx-auto  p-4 bg-primary-100 min-h-[600px] flex flex-col justify-center items-center'>
       <Image src="/bg/cta-bg.jpg" alt="Contato" fill className="object-cover z-0 brightness-[.3] saturate-50 " />          
