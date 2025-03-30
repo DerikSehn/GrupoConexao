@@ -1,6 +1,10 @@
 // src/kommo/factory/kommo.factory.ts
 import axios, { AxiosError } from 'axios';
 
+export interface KommoRequestParams {
+  [key: string]: any;
+}
+
 export class KommoError extends Error {
   constructor(message: string, public readonly statusCode: number) {
     super(message);
@@ -29,7 +33,7 @@ export class Kommo {
     );
   }
 
-  private async request<T>(method: 'get' | 'post' | 'put' | 'delete', endpoint: string, params?: any): Promise<T> {
+  private async request<T>(method: 'get' | 'post' | 'put' | 'delete', endpoint: string, params?: KommoRequestParams): Promise<T> {
     if (!endpoint.startsWith('/')) {
       endpoint = '/' + endpoint;
     }
@@ -49,19 +53,19 @@ export class Kommo {
     }
   }
 
-  public async get<T>(endpoint: string, params?: any): Promise<T> {
+  public async get<T>(endpoint: string, params?: KommoRequestParams): Promise<T> {
     return this.request<T>('get', endpoint, params);
   }
 
-  public async post<T>(endpoint: string, params?: any): Promise<T> {
+  public async post<T>(endpoint: string, params?: KommoRequestParams): Promise<T> {
     return this.request<T>('post', endpoint, params);
   }
 
-  public async put<T>(endpoint: string, params?: any): Promise<T> {
+  public async put<T>(endpoint: string, params?: KommoRequestParams): Promise<T> {
     return this.request<T>('put', endpoint, params);
   }
 
-  public async delete<T>(endpoint: string, params?: any): Promise<T> {
+  public async delete<T>(endpoint: string, params?: KommoRequestParams): Promise<T> {
     return this.request<T>('delete', endpoint, params);
   }
 }
