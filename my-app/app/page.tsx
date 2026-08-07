@@ -15,8 +15,8 @@ export default function Home() {
   const slideTransition = { duration: 0.65, ease: [0.16, 1, 0.3, 1] as const }
 
   return (
-    <main className="min-h-screen bg-white overflow-x-hidden">
-      <WhatsappButton link="https://wa.me/5551981728039?text=Ol%C3%A1" className="fixed bottom-2 right-2" />
+    <main className="min-h-screen bg-white overflow-x-clip">
+      <WhatsappButton link="https://wa.me/5551981728039?text=Ol%C3%A1" className="fixed bottom-4 right-4 lg:bottom-8 lg:right-8 z-50" />
       <Hero />
 
 
