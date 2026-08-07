@@ -6,6 +6,7 @@ import {
     ArrowRight,
     BadgeCheck,
     BriefcaseBusiness,
+    Landmark,
     ShieldCheck,
     Sparkles,
     WalletCards,
@@ -58,6 +59,7 @@ const floatingBenefits = [
 
 const productIcons = {
     seguros: ShieldCheck,
+    "assessoria-de-credito": Landmark,
     "pessoa-juridica": BriefcaseBusiness,
     "credito-consignado": WalletCards,
 }
@@ -218,7 +220,7 @@ export function Hero() {
 
             </div>
             <div id="solutions" className="container relative z-20 mx-auto px-5 lg:-translate-y-[20%] -translate-y-[4%] lg:px-8">
-                <div className="grid gap-4 pb-10 md:grid-cols-3 lg:pb-0">
+                <div className="grid gap-4 pb-10 md:grid-cols-2 xl:grid-cols-4 lg:pb-0">
                     {products.map((product, index) => {
                         const ProductIcon = productIcons[product.id as keyof typeof productIcons]
                         const href = product.button?.href ?? product.href
@@ -236,7 +238,7 @@ export function Hero() {
                                     <ProductIcon className="min-h-16 min-w-16 text-white" />
                                 </div>
                                 <span className="p-7 ">
-                                    <h2 className="text-2xl font-extrabold text-[#1f1f1f]">{product.name}</h2>
+                                    <h2 className="text-xl font-extrabold text-[#1f1f1f] xl:text-2xl">{product.name}</h2>
                                     <p className="mt-3 min-h-20 text-sm leading-6 text-[#1f1f1f]/65">{product.description}</p>
                                     <Link
                                         href={href}

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next"
 import { siteUrl } from "@/lib/site"
 
-const routes = ["/", "/pessoa-juridica", "/privacy-policy"]
+const routes = ["/", "/assessoria-de-credito", "/pessoa-juridica", "/privacy-policy"]
 
 export default function sitemap(): MetadataRoute.Sitemap {
   if (!siteUrl) {

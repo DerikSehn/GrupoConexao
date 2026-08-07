@@ -31,6 +31,25 @@ export const products: Product[] = [
   },
   {
     index: 1,
+    id: "assessoria-de-credito",
+    name: "Assessoria de Crédito",
+    href: "/#assessoria-de-credito",
+    button: {
+        title: "Conhecer assessoria",
+        href: "/assessoria-de-credito"
+    },
+    image: "/images/products/capital-giro.jpg",
+    title: "Assessoria de Crédito para Pessoas e Empresas",
+    description: "Planejamento consultivo para organizar informações, estruturar crédito e encontrar alternativas adequadas ao seu objetivo.",
+    features: [
+      "Diagnóstico financeiro e estratégia personalizada",
+      "Dossiê de crédito e conta digital",
+      "Capital de giro, recebíveis e cartão corporativo",
+      "Financiamentos e crédito com garantias"
+    ]
+  },
+  {
+    index: 2,
     id: "pessoa-juridica",
     name: "Pessoa Jurídica",
     href: "/#pessoa-juridica",
@@ -51,7 +70,7 @@ export const products: Product[] = [
     ]
   },
   {
-    index: 2,
+    index: 3,
     id: "credito-consignado",
     name: "Crédito Consignado Público e Privado",
     href: "#credito-consignado",

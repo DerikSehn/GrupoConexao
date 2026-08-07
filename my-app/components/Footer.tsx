@@ -14,6 +14,7 @@ export default function Footer() {
             <nav className="flex flex-col items-center md:items-start" aria-label="Soluções Grupo Conexão">
               <p className="text-lg font-bold">Soluções</p>
               <Link href="/#seguros" className="mt-2 hover:text-[#ff8833]">Seguros</Link>
+              <Link href="/assessoria-de-credito" className="mt-1 hover:text-[#ff8833]">Assessoria de Crédito</Link>
               <Link href="/pessoa-juridica" className="mt-1 hover:text-[#ff8833]">Soluções para Pessoa Jurídica</Link>
               <Link href="/#credito-consignado" className="mt-1 hover:text-[#ff8833]">Crédito Consignado</Link>
             </nav>

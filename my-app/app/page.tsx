@@ -1,7 +1,7 @@
 "use client";
 import WhatsappButton from "@/components/button/WhatsappButton";
 import ContactSection from "@/components/sections/ContactSection";
-import { Hero } from "@/components/hero/Hero"; 
+import { Hero } from "@/components/hero/Hero";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { products } from "@/data/products";
@@ -29,10 +29,9 @@ export default function Home() {
         transition={slideTransition}
         className="relative mb-10"
       >
-        <span className=" absolute inset-x-1/2 inset-y-0 right-0 z-0 bg-black py-24 px-8"/>
+        <span className=" absolute inset-x-1/2 inset-y-0 right-0 z-0 bg-black py-24 px-8" />
         <div className="container mx-auto relative bg-black bg-gradient-to-l from-black to-black-400 py-24 px-8 rounded-l-xl">
-      
-            <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             <motion.div
               initial={prefersReducedMotion ? false : { opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -40,16 +39,16 @@ export default function Home() {
               transition={{ ...slideTransition, delay: 0.1 }}
             >
               <h2 className="text-6xl font-thin  mb-6 text-left text-primary">Quem somos</h2>
-                <p className="text-lg mb-4 text-white">
+              <p className="text-lg mb-4 text-white">
                 No Grupo Conexão, somos movidos pelo propósito de <strong>transformar desafios</strong> em <strong>soluções inteligentes</strong>.
                 Credenciados diretamente às principais <strong>plataformas digitais</strong> e <strong>Fintechs</strong>, oferecemos muito mais que
                 serviços: entregamos <strong>resultados com excelência</strong>, <strong>inovação</strong> e <strong>comprometimento</strong>.
-                </p>
-                <p className="text-lg text-gray-300">
+              </p>
+              <p className="text-lg text-gray-300">
                 Nossa equipe é formada por <strong>profissionais altamente qualificados</strong>, prontos para atender às suas
                 necessidades com <strong>competência</strong>, <strong>assertividade</strong> e <strong>consistência</strong>, pilares que sustentam nossa atuação e
                 garantem um <strong>impacto real e duradouro</strong>.
-                </p>
+              </p>
             </motion.div>
             <motion.div
               initial={prefersReducedMotion ? false : { opacity: 0, x: 24 }}
@@ -88,12 +87,12 @@ export default function Home() {
       </motion.section>
       {/* Seções de Produtos */}
       {products.map((product, index) => (
-        <ProductSection 
-          key={product.id} 
-          id={product.id} 
-          title={product.title} 
-          description={product.description} 
-          features={product.features} 
+        <ProductSection
+          key={product.id}
+          id={product.id}
+          title={product.title}
+          description={product.description}
+          features={product.features}
           button={product.button}
           index={index}
         />
@@ -134,7 +133,7 @@ export default function Home() {
         </div>
       </motion.section>
 
-      <ContactSection/>
+      <ContactSection />
 
       <motion.section
         id="instagram"
@@ -153,9 +152,9 @@ export default function Home() {
           <Button onClick={() => handleClick('#contact')} className="bg-primary hover:bg-primary/90 text-white text-lg px-8 py-3 mb-4">Fale Conosco</Button>
           <div className="flex flex-col items-center gap-4">
             <a href="https://www.instagram.com/grupoconexao_br" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 text-lg flex gap-4">
-              <Instagram className=""/>
+              <Instagram className="" />
               <p>
-              Siga-nos no Instagram
+                Siga-nos no Instagram
               </p>
             </a>
           </div>

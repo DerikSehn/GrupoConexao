@@ -14,7 +14,7 @@ const organizationSchema = {
       name: "Grupo Conexão",
       url: siteUrl?.toString(),
       logo: absoluteUrl("/logo.png"),
-      description: "Soluções em seguros, crédito consignado e serviços financeiros para empresas.",
+      description: "Soluções em seguros, assessoria de crédito, crédito consignado e serviços financeiros para empresas.",
       telephone: "+55 51 98172-8039",
       sameAs: ["https://www.instagram.com/grupoconexao_br"],
       contactPoint: {
@@ -33,6 +33,14 @@ const organizationSchema = {
               "@type": "Service",
               name: "Seguros",
               description: "Seguros de vida, residencial, automóvel e empresarial.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Assessoria de Crédito",
+              description: "Diagnóstico, dossiê de crédito, capital de giro, recebíveis, financiamentos e garantias para pessoas e empresas.",
             },
           },
           {
@@ -67,10 +75,10 @@ const organizationSchema = {
 export const metadata: Metadata = {
   metadataBase: siteUrl,
   title: {
-    default: "Grupo Conexão | Seguros, Crédito e Soluções Empresariais",
+    default: "Grupo Conexão | Seguros, Assessoria de Crédito e Soluções Empresariais",
     template: "%s | Grupo Conexão",
   },
-  description: "Seguros, crédito consignado e soluções financeiras para empresas. Conte com atendimento consultivo, ágil e humanizado do Grupo Conexão.",
+  description: "Seguros, assessoria de crédito, crédito consignado e soluções financeiras para empresas. Conte com atendimento consultivo, ágil e humanizado do Grupo Conexão.",
   alternates: siteUrl ? { canonical: "/" } : undefined,
   robots: {
     index: true,
@@ -87,8 +95,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
     siteName: "Grupo Conexão",
-    title: "Grupo Conexão | Seguros, Crédito e Soluções Empresariais",
-    description: "Soluções financeiras para pessoas e empresas, com atendimento consultivo, ágil e humanizado.",
+    title: "Grupo Conexão | Seguros, Assessoria de Crédito e Soluções Empresariais",
+    description: "Soluções financeiras e assessoria de crédito para pessoas e empresas, com atendimento consultivo, ágil e humanizado.",
     url: siteUrl ? "/" : undefined,
     images: siteUrl
       ? [{ url: "/images/hero/background-widescreen.png", width: 1920, height: 1080, alt: "Grupo Conexão" }]
@@ -96,8 +104,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Grupo Conexão | Seguros, Crédito e Soluções Empresariais",
-    description: "Soluções financeiras para pessoas e empresas, com atendimento consultivo, ágil e humanizado.",
+    title: "Grupo Conexão | Seguros, Assessoria de Crédito e Soluções Empresariais",
+    description: "Soluções financeiras e assessoria de crédito para pessoas e empresas, com atendimento consultivo, ágil e humanizado.",
   },
 }
 
