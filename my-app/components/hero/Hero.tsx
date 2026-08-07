@@ -14,6 +14,7 @@ import {
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import Slider from "react-slick"
 import { motion, useMotionValue, useReducedMotion, useSpring } from "framer-motion"
 
 const whatsappPhone = "5551981728039"
@@ -70,6 +71,32 @@ export function Hero() {
     const pointerY = useMotionValue(0)
     const visualX = useSpring(pointerX, { stiffness: 200, damping: 30 })
     const visualY = useSpring(pointerY, { stiffness: 200, damping: 30 })
+    const solutionSliderSettings = {
+        arrows: false,
+        dots: false,
+        infinite: products.length > 3,
+        speed: 600,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: !prefersReducedMotion,
+        autoplaySpeed: 4200,
+        pauseOnHover: true,
+        pauseOnFocus: true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                },
+            },
+            {
+                breakpoint: 640,
+                settings: {
+                    slidesToShow: 1,
+                },
+            },
+        ],
+    }
 
     const handleVisualPointerMove = (event: React.MouseEvent<HTMLDivElement>) => {
         if (prefersReducedMotion) return
@@ -220,37 +247,38 @@ export function Hero() {
 
             </div>
             <div id="solutions" className="container relative z-20 mx-auto px-5 lg:-translate-y-[20%] -translate-y-[4%] lg:px-8">
-                <div className="grid gap-4 pb-10 md:grid-cols-2 xl:grid-cols-4 lg:pb-0">
+                <Slider {...solutionSliderSettings} className="-mx-2 pb-10 lg:pb-0">
                     {products.map((product, index) => {
                         const ProductIcon = productIcons[product.id as keyof typeof productIcons]
                         const href = product.button?.href ?? product.href
 
                         return (
-                            <motion.article
-                                key={product.id}
-                                initial={prefersReducedMotion ? false : { opacity: 0, y: 36, scale: 0.94 }}
-                                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                                viewport={{ once: true, amount: 0.2 }}
-                                transition={{ type: "spring", stiffness: 150, damping: 20, delay: index * 0.1 }}
-                                className="group rounded-md flex gap-6 bg-white shadow-[0_18px_45px_rgba(0,0,0,0.16)] transition-all duration-300 hover:-translate-y-1 hover:border-[#ff6b00] hover:shadow-[0_24px_55px_rgba(0,0,0,0.2)]"
-                            >
-                                <div className="hidden lg:flex bg-gradient-to-b from-[#ff6b00] to-[#ff6a0087] p-3 rounded-l-md">
-                                    <ProductIcon className="min-h-16 min-w-16 text-white" />
-                                </div>
-                                <span className="p-7 ">
-                                    <h2 className="text-xl font-extrabold text-[#1f1f1f] xl:text-2xl">{product.name}</h2>
-                                    <p className="mt-3 min-h-20 text-sm leading-6 text-[#1f1f1f]/65">{product.description}</p>
-                                    <Link
-                                        href={href}
-                                        className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#1f1f1f] transition-colors hover:text-[#ff6b00]"
-                                    >
-                                        Saiba mais <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                                    </Link>
-                                </span>
-                            </motion.article>
+                            <div key={product.id} className="px-2">
+                                <motion.article
+                                    initial={prefersReducedMotion ? false : { opacity: 0, y: 36, scale: 0.94 }}
+                                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                                    viewport={{ once: true, amount: 0.2 }}
+                                    transition={{ type: "spring", stiffness: 150, damping: 20, delay: index * 0.1 }}
+                                      className="group flex min-h-[284px] gap-5 rounded-md bg-white shadow-[0_18px_45px_rgba(0,0,0,0.16)] transition-all duration-300 hover:-translate-y-1 hover:border-[#ff6b00] hover:shadow-[0_24px_55px_rgba(0,0,0,0.2)]"
+                                >
+                                    <div className="hidden rounded-l-md bg-gradient-to-b from-[#ff6b00] to-[#ff6a0087] p-3 lg:flex">
+                                        <ProductIcon className="min-h-14 min-w-14 text-white" />
+                                    </div>
+                                    <span className="flex flex-1 flex-col p-6 lg:p-7">
+                                        <h2 className="text-xl font-extrabold text-[#1f1f1f] xl:text-2xl">{product.name}</h2>
+                                        <p className="mt-3 flex-1 text-sm leading-6 text-[#1f1f1f]/65">{product.description}</p>
+                                        <Link
+                                            href={href}
+                                            className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#1f1f1f] transition-colors hover:text-[#ff6b00]"
+                                        >
+                                            Saiba mais <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                                        </Link>
+                                    </span>
+                                </motion.article>
+                            </div>
                         )
                     })}
-                </div>
+                </Slider>
             </div>
 
             <div className="bg-white">

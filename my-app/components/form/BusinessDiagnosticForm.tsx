@@ -1,31 +1,18 @@
-"use client";
- import React from 'react';
-import CTAButton from '../button/CTAButton';
-import CTACard from '../cards/CTACard';
-import Section from '../sections/Section';
-import Title from '../text/Title';
- 
+import { WhatsAppLeadForm } from "@/components/form/WhatsAppLeadForm"
+import Section from "../sections/Section"
+import Title from "../text/Title"
 
-const BusinessDiagnosticForm: React.FC = () => {
-    
-    return (
-       <Section>   <Title >
-                Diagnóstico Empresarial
-            </Title>
-            <CTACard
-            className='container'
-                title="Preencha o formulário para um diagnóstico empresarial completo" 
-                content={
-                    <CTAButton
-                       text='Preencher formulário'
-                       variant='primary'
-                       href={"https://forms.kommo.com/rddwzrw"}
-                       />  
-                }
-            >
-            </CTACard>
+const BusinessDiagnosticForm = () => (
+    <Section>
+        <Title>Diagnóstico Empresarial</Title>
+        <div className="mx-auto max-w-lg rounded-md border border-primary/15 bg-white p-7 shadow-sm">
+            <WhatsAppLeadForm
+                context="um diagnóstico empresarial"
+                title="Conte sobre a sua empresa"
+                description="Nossa equipe recebe as informações pelo WhatsApp para entender o momento do seu negócio."
+            />
+        </div>
     </Section>
-    );
-};
+)
 
-export default BusinessDiagnosticForm;
+export default BusinessDiagnosticForm

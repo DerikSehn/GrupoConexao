@@ -1,6 +1,7 @@
 "use client"
 
 import { assessoriaCreditoData } from "@/data/assessoria-credito"
+import { WhatsAppLeadForm } from "@/components/form/WhatsAppLeadForm"
 import {
   ArrowRight,
   BriefcaseBusiness,
@@ -56,9 +57,7 @@ export default function AssessoriaDeCreditoPage() {
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
-                href={assessoriaCreditoData.callToAction.formUrl}
-                target="_blank"
-                rel="noreferrer"
+                href="#diagnostico"
                 className="inline-flex min-h-14 items-center justify-center gap-3 rounded-md bg-[#44cf6c] px-6 text-sm font-bold text-[#060606] shadow-[0_14px_34px_rgba(68,207,108,0.28)] transition-transform hover:scale-[1.02]"
               >
                 Começar diagnóstico <ArrowRight className="h-4 w-4" />
@@ -204,7 +203,7 @@ export default function AssessoriaDeCreditoPage() {
         </div>
       </section>
 
-      <section className="bg-[#1f1f1f] py-20 text-white lg:py-24">
+      <section id="diagnostico" className="bg-[#1f1f1f] py-20 text-white lg:py-24">
         <motion.div
           initial={prefersReducedMotion ? false : { opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -217,14 +216,14 @@ export default function AssessoriaDeCreditoPage() {
             <h2 className="mt-5 text-4xl font-extrabold leading-tight sm:text-5xl">{assessoriaCreditoData.callToAction.title}</h2>
             <p className="mt-5 max-w-2xl text-base leading-7 text-white/70">{assessoriaCreditoData.callToAction.description}</p>
           </div>
-          <a
-            href={assessoriaCreditoData.callToAction.formUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex min-h-14 items-center justify-center gap-3 rounded-md bg-[#ff6b00] px-6 text-sm font-bold text-white shadow-[0_14px_34px_rgba(255,107,0,0.24)] transition-transform hover:scale-[1.02]"
-          >
-            Preencher diagnóstico <ArrowRight className="h-4 w-4" />
-          </a>
+          <div className="w-full max-w-lg rounded-md border border-white/15 bg-white p-7 text-[#1f1f1f] shadow-[0_20px_50px_rgba(0,0,0,0.28)]">
+            <WhatsAppLeadForm
+              context="uma assessoria de crédito"
+              title="Envie seu diagnóstico"
+              description="Ao enviar, uma conversa com as informações preenchidas será aberta no WhatsApp."
+              submitLabel="Continuar no WhatsApp"
+            />
+          </div>
         </motion.div>
       </section>
     </main>

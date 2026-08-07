@@ -72,7 +72,6 @@ export const assessoriaCreditoData = {
     title: "Comece pelo seu diagnóstico",
     description:
       "Conte com uma leitura especializada para definir os próximos passos do seu crédito com clareza e segurança.",
-    formUrl: "https://forms.kommo.com/rddwzrw",
     whatsappUrl:
       "https://wa.me/5551981728039?text=Ol%C3%A1%21%20Quero%20falar%20sobre%20a%20Assessoria%20de%20Cr%C3%A9dito.",
   },
