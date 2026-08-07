@@ -9,10 +9,10 @@ export const privacyPolicyData = {
   },
   content: {
     companyName: 'Grupo Conexão',
-    cnpj: '12.345.678/0001-99',
-    address: 'Rua Coberta, 1, Centro, Capao da canoa, RS, CEP 95555-000',
-    email: 'sandro-marques@conexao-suc.com.br',
-    lastUpdate: '01/01/2023',
+    cnpj: '16.593.350/0001-65',
+    address: 'Rua Coberta, 1, Centro, Capão da Canoa, RS, CEP 95555-000',
+    email: 'sandro.marques@conexao-suc.com.br',
+    lastUpdate: '07/08/2026',
     sections: [
       {
         title: '1. Informações Coletadas',

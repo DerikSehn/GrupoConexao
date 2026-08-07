@@ -25,7 +25,6 @@ export const pessoaJuridicaData = {
       { title: "Cartão de Crédito Corporativo Mastercard", description: "Facilidades para sua empresa.", icon: "💳" },
       { title: "Credito Fomento PJ", description: "Para o crescimento da sua empresa.", icon: "📈" },
       { title: "Crédito com Garantia Imóvel", description: "Taxas competitivas.", icon: "🏠" },
-      { title: "Crédito Imobiliário", description: "Para investir em imóveis.", icon: "🏢" },
       { title: "Capital de Giro", description: "Para manter o fluxo de caixa.", icon: "💰" },
       { title: "Empréstimo com Garantia Imóvel", description: "Condições especiais.", icon: "🔑" },
       { title: "Financiamentos", description: "Diversas opções de financiamento.", icon: "💸" },

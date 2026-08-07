@@ -6,89 +6,39 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { products } from "@/data/products";
 import { handleScrollToSection as handleClick } from "@/lib/scroll";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { motion, useReducedMotion } from "framer-motion";
 import { CheckCircle, Instagram } from "lucide-react";
-import { useEffect } from "react";
-import TextParallax from "@/components/design/TextParallax";
-import { partners } from "@/data/partners";
-import ProductCard from "@/components/cards/ProductCard";
 import { ProductSection } from "@/components/sections/ProductSection";
 
-gsap.registerPlugin(ScrollTrigger)
-
 export default function Home() {
-  useEffect(() => {
-    gsap.fromTo(".hero-content", 
-      { opacity: 0, y: -50 }, 
-      { opacity: 1, y: 0, duration: 1, ease: "power3.out" }
-    )
-
-    gsap.fromTo(".card", 
-      { opacity: 0, y: 50 }, 
-      { 
-        opacity: 1, 
-        y: 0, 
-        duration: 1, 
-        stagger: 0.2, 
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: ".card",
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse",
-        }
-      }
-    )
-
-    gsap.fromTo(".product-section", 
-      { opacity: 0, y: 50 }, 
-      { 
-        opacity: 1, 
-        y: 0, 
-        duration: 1, 
-        stagger: 0.2, 
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: ".product-section",
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse",
-        }
-      }
-    )
-
-    gsap.fromTo(".benefit-item", 
-      { opacity: 0, x: -50 }, 
-      { 
-        opacity: 1, 
-        x: 0, 
-        duration: 1, 
-        stagger: 0.2, 
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: ".benefit-item",
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse",
-        }
-      }
-    )
-  }, [])
+  const prefersReducedMotion = useReducedMotion()
+  const slideTransition = { duration: 0.65, ease: [0.16, 1, 0.3, 1] as const }
 
   return (
-    <div className="min-h-screen bg-white overflow-x-hidden">
-      <WhatsappButton link="https://api.whatsapp.com/send?phone=5551999300707&text=Ol%C3%A1" className="fixed bottom-2 right-2" />
+    <main className="min-h-screen bg-white overflow-x-hidden">
+      <WhatsappButton link="https://wa.me/5551981728039?text=Ol%C3%A1" className="fixed bottom-2 right-2" />
       <Hero />
 
 
       {/* Sobre Nós */}
-      <section id="about" className="relative mb-10">
+      <motion.section
+        id="about"
+        initial={prefersReducedMotion ? false : { opacity: 0, x: -36 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={slideTransition}
+        className="relative mb-10"
+      >
         <span className=" absolute inset-x-1/2 inset-y-0 right-0 z-0 bg-black py-24 px-8"/>
         <div className="container mx-auto relative bg-black bg-gradient-to-l from-black to-black-400 py-24 px-8 rounded-l-xl">
       
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
+            <div className="grid md:grid-cols-2 gap-8">
+            <motion.div
+              initial={prefersReducedMotion ? false : { opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ ...slideTransition, delay: 0.1 }}
+            >
               <h2 className="text-6xl font-thin  mb-6 text-left text-primary">Quem somos</h2>
                 <p className="text-lg mb-4 text-white">
                 No Grupo Conexão, somos movidos pelo propósito de <strong>transformar desafios</strong> em <strong>soluções inteligentes</strong>.
@@ -100,64 +50,42 @@ export default function Home() {
                 necessidades com <strong>competência</strong>, <strong>assertividade</strong> e <strong>consistência</strong>, pilares que sustentam nossa atuação e
                 garantem um <strong>impacto real e duradouro</strong>.
                 </p>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <Card className="bg-white border-primary card">
+            </motion.div>
+            <motion.div
+              initial={prefersReducedMotion ? false : { opacity: 0, x: 24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ ...slideTransition, delay: 0.18 }}
+              className="grid grid-cols-2 gap-4"
+            >
+              <Card className="bg-white border-primary">
                 <CardContent className=" p-6 flex flex-col items-center min-h-full text-center">
                   <h3 className="text-2xl font-bold text-black mb-2">17+</h3>
                   <p className="text-sm text-gray-600">Anos de Experiência</p>
                 </CardContent>
               </Card>
-              <Card className="bg-white border-primary card">
+              <Card className="bg-white border-primary">
                 <CardContent className=" p-6 flex flex-col items-center min-h-full text-center">
                   <h3 className="text-2xl font-bold text-black mb-2">95 mil+</h3>
                   <p className="text-sm text-gray-600">Clientes Satisfeitos</p>
                 </CardContent>
               </Card>
-              <Card className="bg-white border-primary card">
+              <Card className="bg-white border-primary">
                 <CardContent className=" p-6 flex flex-col items-center min-h-full text-center">
                   <h3 className="text-2xl font-bold text-black mb-2">44+</h3>
                   <p className="text-sm text-gray-600">Parceiros de Negócios</p>
                 </CardContent>
               </Card>
-              <Card className="bg-white border-primary card">
+              <Card className="bg-white border-primary">
                 <CardContent className=" p-6 flex flex-col items-center min-h-full text-center">
                   <h3 className="text-2xl font-bold text-black mb-2">24/7</h3>
                   <p className="text-sm text-gray-600">Suporte Dedicado</p>
                 </CardContent>
               </Card>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
-
-      <h2 className="text-5xl font-thin my-10 mt-20  text-center text-primary">Parceiros</h2>
-
-      <TextParallax
-        images={partners.map((bank) => ({
-          src: bank.image,
-        }))}
-      />
-
-
-      {/* Nossos Produtos */}
-      <h2 className="text-5xl font-thin  my-10 mt-20 text-center text-primary">Nossos Serviços</h2>
-      
-      <section id="products" className="py-12 px-2 md:px-4  bg-white">
-        <div className="container lg:mx-auto px-0 mx-0">
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
-          {products.map((product, index) => (
-            <ProductCard 
-              key={product.name} 
-              product={product} 
-              index={index}
-            />
-          ))}         
-           </div>
-        </div>
-      </section> 
-     
-
+      </motion.section>
       {/* Seções de Produtos */}
       {products.map((product, index) => (
         <ProductSection 
@@ -171,7 +99,14 @@ export default function Home() {
         />
       ))}
       {/* Benefícios */}
-      <section id="benefits" className="py-12 px-4 bg-primary/5">
+      <motion.section
+        id="benefits"
+        initial={prefersReducedMotion ? false : { opacity: 0, x: 36 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={slideTransition}
+        className="py-12 px-4 bg-primary/5"
+      >
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-8 text-center text-primary">Benefícios</h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -182,19 +117,33 @@ export default function Home() {
               "Estratégias personalizadas por setor",
               "Suporte especializado em todo o processo",
               "Tecnologia de ponta para matching de clientes",
-            ].map((benefit) => (
-              <div key={benefit} className="flex items-start benefit-item">
+            ].map((benefit, index) => (
+              <motion.div
+                key={benefit}
+                initial={prefersReducedMotion ? false : { opacity: 0, x: index % 2 === 0 ? -22 : 22 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ ...slideTransition, delay: index * 0.06 }}
+                className="flex items-start"
+              >
                 <CheckCircle className="h-6 w-6 text-black mr-2 mt-1 flex-shrink-0" />
                 <p className="text-gray-700">{benefit}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       <ContactSection/>
 
-      <section id="instagram" className="py-12 px-4 text-center bg-black relative">
+      <motion.section
+        id="instagram"
+        initial={prefersReducedMotion ? false : { opacity: 0, y: 28 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.25 }}
+        transition={slideTransition}
+        className="py-12 px-4 text-center bg-black relative"
+      >
         <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: 'url(/images/cta-bg.jpg)' }}></div>
         <div className="container mx-auto relative z-10">
           <h2 className="text-3xl font-bold mb-4 text-white">Pronto para Impulsionar Seu Negócio?</h2>
@@ -211,9 +160,9 @@ export default function Home() {
             </a>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-    </div>
+    </main>
 
 
   )

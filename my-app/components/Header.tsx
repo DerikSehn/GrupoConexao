@@ -1,119 +1,102 @@
 "use client"
 
 import * as React from "react"
-import Link from "next/link"
 import Image from "next/image"
+import Link from "next/link"
 import { Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { products } from "@/data/products"
-import { cn } from "@/lib/utils"
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
+
+const whatsappPhone = "5551981728039"
+const whatsappUrl = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(
+  "Olá! Gostaria de falar com um consultor do Grupo Conexão."
+)}`
+
+const navigation = [
+  { label: "Soluções", href: "/#solutions" },
+  { label: "Sobre", href: "/#about" },
+  { label: "Contato", href: "/#contact" },
+]
 
 export function Header() {
-  const [isVisible, setIsVisible] = React.useState(true)
-  const [lastScrollY, setLastScrollY] = React.useState(0)
-
-  const handleScroll = React.useCallback(() => {
-    if (typeof window !== 'undefined') {
-      if (window.scrollY < lastScrollY || window.scrollY === 0) {
-        setIsVisible(true)
-      } else {
-        setIsVisible(false)
-      }
-      setLastScrollY(window.scrollY)
-    }
-  }, [lastScrollY])
+  const [isScrolled, setIsScrolled] = React.useState(false)
 
   React.useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', handleScroll)
-      return () => {
-        window.removeEventListener('scroll', handleScroll)
-      }
-    }
-  }, [handleScroll, lastScrollY])
+    const updateHeader = () => setIsScrolled(window.scrollY > 24)
+
+    updateHeader()
+    window.addEventListener("scroll", updateHeader, { passive: true })
+    return () => window.removeEventListener("scroll", updateHeader)
+  }, [])
 
   return (
-    //  inner rounded curve effect at bottom right
-    <header className={`fixed top-0 left-0 right-0 z-50 bg-black text-white transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
-    
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "border-b border-white/10 bg-[#060606]/95 shadow-lg shadow-black/20 backdrop-blur-xl"
+          : "bg-transparent"
+      }`}
     >
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center "
-        >
-        <Link href="/" className="flex items-center bg-black py-3 -mb-6 px-4 -mx-4 rounded-b-lg hover:animate-pulse">
+      <div className="container mx-auto flex h-20 items-center justify-between px-5 lg:h-24 lg:px-8">
+        <Link href="/" className="flex items-center" aria-label="Página inicial do Grupo Conexão">
           <Image
             src="/logo.png"
             alt="Grupo Conexão"
             width={180}
             height={60}
-            className="h-12 w-auto"
+            priority
+            className="h-10 w-auto lg:h-12"
           />
         </Link>
-        <NavigationMenu className="hidden md:flex">
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className={navigationMenuTriggerStyle()}>
-                Serviços
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid gap-3 p-4 md:w-[400px] lg:grid-cols-2">
-                  {products.map((product) => (
-                    <ListItem
-                      key={product.name}
-                      title={product.name}
-                      href={ product.button?.href ?? product.href}
-                      className=""
-                    >
-                      <p>
-                      {product.description}
-                      </p>
-                    </ListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Link href="/#contact" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Contato
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
-        {/* Botão Fale Conosco para computadores */}
-        <Link
-          href="#contact"
-          className="hidden md:inline-block bg-orange-400 text-black px-4 py-2 rounded hover:bg-orange-500 transition-colors"
+
+        <nav className="hidden items-center gap-8 md:flex" aria-label="Navegação principal">
+          {navigation.map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              className="text-sm font-semibold text-white/80 transition-colors hover:text-[#ff8833]"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="hidden items-center gap-2 rounded-xl bg-[#ff6b00] px-4 py-3 text-sm font-bold text-white shadow-[0_8px_20px_rgba(255,107,0,0.25)] transition-all hover:scale-[1.02] hover:bg-[#ff8833] md:inline-flex"
         >
-          Fale Conosco
-        </Link>
+          <Image src="/whatsapp.png" alt="WhatsApp" width={16} height={16} className="h-4 w-4" />
+          Fale no WhatsApp
+        </a>
+
         <Sheet>
           <SheetTrigger asChild>
-            <Button variant="ghost" className="md:hidden text-white">
+            <Button variant="ghost" className="text-white hover:bg-white/10 hover:text-white md:hidden" aria-label="Abrir menu">
               <Menu className="h-6 w-6" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="bg-primary text-white">
-            <nav className="flex flex-col space-y-4 mt-8">
-              {products.map((product) => (
+          <SheetContent side="right" className="border-white/10 bg-[#060606] text-white">
+            <nav className="mt-10 flex flex-col gap-2" aria-label="Navegação móvel">
+              {navigation.map((item) => (
                 <Link
-                  key={product.name}
-                  href={product.href}
-                  className="text-white hover:text-orange-400 transition-colors"
+                  key={item.label}
+                  href={item.href}
+                  className="rounded-lg px-3 py-3 text-base font-semibold text-white transition-colors hover:bg-white/10 hover:text-[#ff8833]"
                 >
-                  {product.name}
+                  {item.label}
                 </Link>
               ))}
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-5 inline-flex items-center justify-center gap-2 rounded-xl bg-[#44cf6c] px-4 py-4 text-sm font-bold text-[#060606]"
+              >
+                <Image src="/whatsapp.png" alt="WhatsApp" width={20} height={20} className="h-5 w-5" />
+                Fale no WhatsApp
+              </a>
             </nav>
           </SheetContent>
         </Sheet>
@@ -121,35 +104,3 @@ export function Header() {
     </header>
   )
 }
-
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, href, children, ...props }, ref) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        <Link
-          href={href!}
-          legacyBehavior
-          passHref
-        >
-          <a
-            ref={ref}
-            className={cn(
-              "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors group hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-              className
-            )}
-            {...props}
-          >
-            <h3 className="text-sm font-medium leading-none text-white group-hover:text-black group-focus:text-black">{title}</h3>
-            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-              {children}
-            </p>
-          </a>
-        </Link>
-      </NavigationMenuLink>
-    </li>
-  )
-})
-ListItem.displayName = "ListItem"

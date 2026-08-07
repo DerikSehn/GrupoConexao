@@ -23,18 +23,12 @@ Cláusula 1ª – GRUPO CONEXÃO,  concederá ao Parceiro OUTORGADO, durante a 
 - Recebíveis  
 - Empréstimo com Garantia Imóvel 
 - Crédito com Garantia Imóvel 
-- Crédito Imobiliário 
 - CDC Lojista 
 - Consignado Público e Privado
 - Convênios Governos 
 - Convênios Prefeituras 
-- Construção Civil 
-- Consócios 
 - Seguros 
-- Plano de Benefícios (saúde)
-- Plano de Saúde 
 - Assessoria Jurídica Empresarial 
-- Veículos 
 
 AS OBRIGAÇÕES DO PARCEIRO OUTORGADO:
 
